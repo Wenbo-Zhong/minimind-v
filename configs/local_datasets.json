@@ -1,0 +1,99 @@
+{
+  "sources": [
+    {
+      "name": "minimind_v_pretrain",
+      "stages": [],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/vision/minimind-v_dataset/pretrain_i2t.parquet",
+      "weight": 1
+    },
+    {
+      "name": "llava_pretrain",
+      "stages": [],
+      "format": "json",
+      "files": "/home/zwb/ai/data/vision/llava-pretrain/blip_laion_cc_sbu_558k.json",
+      "image_archive": "/home/zwb/ai/data/vision/llava-pretrain/images.zip",
+      "weight": 1
+    },
+    {
+      "name": "minimind_v_sft",
+      "stages": [
+        "sft"
+      ],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/vision/minimind-v_dataset/sft_i2t.parquet"
+    },
+    {
+      "name": "openhermes_2_5",
+      "stages": [
+        "pretrain",
+        "sft"
+      ],
+      "format": "json",
+      "files": "/home/zwb/ai/data/sft/openhermes-2.5/openhermes2_5.jsonl",
+      "weight": 2
+    },
+    {
+      "name": "infinity_instruct",
+      "stages": [
+        "sft"
+      ],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/sft/infinity-instruct/3M/*.parquet",
+      "weight": 2
+    },
+    {
+      "name": "magicoder_oss",
+      "stages": [
+        "pretrain",
+        "sft"
+      ],
+      "format": "json",
+      "files": "/home/zwb/ai/data/code/magicoder_oss_instruct.jsonl"
+    },
+    {
+      "name": "arithmetic",
+      "stages": [
+        "sft"
+      ],
+      "format": "json",
+      "files": "/home/zwb/ai/data/math/arithmetic.jsonl",
+      "weight": 1
+    },
+    {
+      "name": "identity",
+      "stages": [
+        "sft"
+      ],
+      "format": "json",
+      "files": "/home/zwb/ai/data/identity/minimind_identity.jsonl",
+      "weight": 2
+    },
+    {
+      "name": "codealpaca",
+      "stages": [
+        "sft"
+      ],
+      "format": "json",
+      "files": "/home/zwb/ai/data/code/codealpaca.jsonl"
+    },
+    {
+      "name": "fineweb_edu_10bt",
+      "stages": [
+        "pretrain"
+      ],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/*.parquet",
+      "weight": 1
+    },
+    {
+      "name": "skypile_subset",
+      "stages": [
+        "pretrain"
+      ],
+      "format": "json",
+      "files": "/home/zwb/ai/data/text/skypile-subset/data/*.jsonl",
+      "weight": 1
+    }
+  ]
+}

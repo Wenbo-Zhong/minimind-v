@@ -1,0 +1,33 @@
+{
+  "sources": [
+    {
+      "name": "minimind_v_pretrain",
+      "stages": ["pretrain"],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/vision/minimind-v_dataset/pretrain_i2t.parquet",
+      "weight": 1
+    },
+    {
+      "name": "llava_pretrain",
+      "stages": ["pretrain"],
+      "format": "json",
+      "files": "/home/zwb/ai/data/vision/llava-pretrain/blip_laion_cc_sbu_558k.json",
+      "image_archive": "/home/zwb/ai/data/vision/llava-pretrain/images.zip",
+      "weight": 1
+    },
+    {
+      "name": "fineweb_edu_10bt",
+      "stages": ["pretrain"],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/*.parquet",
+      "weight": 4
+    },
+    {
+      "name": "skypile_subset",
+      "stages": ["pretrain"],
+      "format": "json",
+      "files": "/home/zwb/ai/data/text/skypile-subset/data/*.jsonl",
+      "weight": 4
+    }
+  ]
+}

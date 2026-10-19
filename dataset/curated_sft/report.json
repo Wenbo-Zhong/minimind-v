@@ -1,0 +1,25 @@
+{
+  "output": "dataset/curated_sft/train.jsonl",
+  "rows": 85176,
+  "scanned": {
+    "coig_exam": 63532,
+    "coig_code": 11737,
+    "coig_translated": 66858,
+    "coig_values": 19470,
+    "tulu": 601478,
+    "infinity_core": 1483097,
+    "arithmetic": 50000,
+    "identity": 6000
+  },
+  "accepted": {
+    "coig_exam": 8000,
+    "coig_code": 10000,
+    "coig_translated": 7000,
+    "coig_values": 2998,
+    "tulu": 25000,
+    "infinity_core": 20000,
+    "arithmetic": 12000,
+    "identity": 178
+  },
+  "duplicates_removed": 2216996
+}

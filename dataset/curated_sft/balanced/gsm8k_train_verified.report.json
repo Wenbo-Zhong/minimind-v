@@ -1,0 +1,10 @@
+{
+  "input": "/home/zwb/ai/data/eval/gsm8k/main/train-00000-of-00001.parquet",
+  "output": "/home/zwb/workspace/minimind-v/dataset/curated_sft/balanced/gsm8k_train_verified.jsonl",
+  "input_rows": 7473,
+  "accepted_rows": 7473,
+  "rejected_missing_gold": 0,
+  "rejected_invalid_worked_solution": 0,
+  "checked_arithmetic_annotations": 23716,
+  "validation": "all accepted answers have a GSM8K final answer and all <<expression=result>> annotations pass safe arithmetic evaluation"
+}

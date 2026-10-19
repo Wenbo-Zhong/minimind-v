@@ -1,0 +1,948 @@
+{
+  "seed": 42,
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "tokenizer_vocab_size": 151665,
+  "limitations": [
+    "Estimated local-tokenizer totals, not a full tokenization.",
+    "No full-corpus deduplication; sampled duplicates cannot establish a corpus-wide duplicate rate.",
+    "Historical training tokens cannot be reconstructed without run settings or counters."
+  ],
+  "fineweb_edu": {
+    "files": 14,
+    "bytes": 28518193415,
+    "exact_rows": 9672101,
+    "exact_native_token_count": 9972918177,
+    "estimated_local_text_tokens": 9527474828.53125,
+    "sampling_95pct_interval": [
+      8924718910.855986,
+      10130230746.206514
+    ],
+    "details": [
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/000_00000.parquet",
+        "rows": 726000,
+        "row_groups": 726,
+        "native_token_count": 754872720,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 734371687.5,
+        "standard_error": 115840896.20411505
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/001_00000.parquet",
+        "rows": 729000,
+        "row_groups": 729,
+        "native_token_count": 753799961,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 819381761.71875,
+        "standard_error": 105399636.08993919
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/002_00000.parquet",
+        "rows": 727000,
+        "row_groups": 727,
+        "native_token_count": 752522127,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 725128542.96875,
+        "standard_error": 70402614.83047916
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/003_00000.parquet",
+        "rows": 734000,
+        "row_groups": 734,
+        "native_token_count": 749146080,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 746050789.0625,
+        "standard_error": 103458764.72748612
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/004_00000.parquet",
+        "rows": 745000,
+        "row_groups": 745,
+        "native_token_count": 747733871,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 678401074.21875,
+        "standard_error": 53586666.80302105
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/005_00000.parquet",
+        "rows": 738000,
+        "row_groups": 738,
+        "native_token_count": 749616137,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 704374875.0,
+        "standard_error": 69459339.39902067
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/006_00000.parquet",
+        "rows": 732000,
+        "row_groups": 732,
+        "native_token_count": 751319463,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 683176171.875,
+        "standard_error": 55738276.815281026
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/007_00000.parquet",
+        "rows": 725000,
+        "row_groups": 725,
+        "native_token_count": 750929625,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 596156738.28125,
+        "standard_error": 45142817.69043538
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/008_00000.parquet",
+        "rows": 724000,
+        "row_groups": 724,
+        "native_token_count": 751983091,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 933736578.125,
+        "standard_error": 168872630.2148628
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/009_00000.parquet",
+        "rows": 713000,
+        "row_groups": 713,
+        "native_token_count": 756804244,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 726911855.46875,
+        "standard_error": 67524369.69927819
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/010_00000.parquet",
+        "rows": 730000,
+        "row_groups": 730,
+        "native_token_count": 755159849,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 659090195.3125,
+        "standard_error": 49592342.89120532
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/011_00000.parquet",
+        "rows": 735000,
+        "row_groups": 735,
+        "native_token_count": 754292945,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 667985800.78125,
+        "standard_error": 41236941.063610844
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/012_00000.parquet",
+        "rows": 732000,
+        "row_groups": 732,
+        "native_token_count": 754633942,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 699271593.75,
+        "standard_error": 64565545.30680158
+      },
+      {
+        "file": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/013_00000.parquet",
+        "rows": 182101,
+        "row_groups": 183,
+        "native_token_count": 190104122,
+        "sampled_rows": 256,
+        "estimated_local_text_tokens": 153437164.46875,
+        "standard_error": 11768363.276605943
+      }
+    ]
+  },
+  "skypile": {
+    "files": 87,
+    "bytes": 104799875762,
+    "estimated_rows": 34939246.60239491,
+    "estimated_local_text_tokens": 23378133714.389606,
+    "sampling_95pct_interval": [
+      23261166333.51976,
+      23495101095.259453
+    ],
+    "unique_sampled_records": 2784,
+    "sampled_exact_text_duplicates": 28,
+    "empty_draws": 0,
+    "invalid_draws": 0,
+    "details": [
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0000.jsonl",
+        "bytes": 1334498606,
+        "draws": 32,
+        "estimated_text_tokens": 297217083.26723367,
+        "standard_error": 5855985.316031755,
+        "estimated_rows": 614197.0420718659,
+        "estimated_tokens_after_449_token_document_truncation": 203192551.75606555
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0001.jsonl",
+        "bytes": 1211249842,
+        "draws": 32,
+        "estimated_text_tokens": 275669053.4364234,
+        "standard_error": 6403319.911740369,
+        "estimated_rows": 415931.5643594287,
+        "estimated_tokens_after_449_token_document_truncation": 148022634.8096488
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0002.jsonl",
+        "bytes": 1198838724,
+        "draws": 32,
+        "estimated_text_tokens": 269312875.1000879,
+        "standard_error": 5319586.981888197,
+        "estimated_rows": 376992.32097515906,
+        "estimated_tokens_after_449_token_document_truncation": 155753161.94705695
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0003.jsonl",
+        "bytes": 1195519138,
+        "draws": 32,
+        "estimated_text_tokens": 270740105.0769885,
+        "standard_error": 5906867.8013302395,
+        "estimated_rows": 520160.7531042779,
+        "estimated_tokens_after_449_token_document_truncation": 182380772.65125972
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0004.jsonl",
+        "bytes": 1184851603,
+        "draws": 32,
+        "estimated_text_tokens": 263484431.11730433,
+        "standard_error": 4157779.8222745676,
+        "estimated_rows": 410830.6506957262,
+        "estimated_tokens_after_449_token_document_truncation": 142651476.01496986
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0005.jsonl",
+        "bytes": 1194356281,
+        "draws": 32,
+        "estimated_text_tokens": 258632329.28273147,
+        "standard_error": 4339914.521201475,
+        "estimated_rows": 354063.7630366077,
+        "estimated_tokens_after_449_token_document_truncation": 137672884.3396095
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0006.jsonl",
+        "bytes": 1180809594,
+        "draws": 32,
+        "estimated_text_tokens": 269454106.28315187,
+        "standard_error": 7368872.609243236,
+        "estimated_rows": 446465.1776720468,
+        "estimated_tokens_after_449_token_document_truncation": 159263926.29113108
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0007.jsonl",
+        "bytes": 1165740384,
+        "draws": 32,
+        "estimated_text_tokens": 261490393.4494485,
+        "standard_error": 4715817.839897465,
+        "estimated_rows": 492981.57078696816,
+        "estimated_tokens_after_449_token_document_truncation": 170220446.3714084
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0008.jsonl",
+        "bytes": 1153540758,
+        "draws": 32,
+        "estimated_text_tokens": 254136870.44692242,
+        "standard_error": 5699048.029077778,
+        "estimated_rows": 348743.09546161303,
+        "estimated_tokens_after_449_token_document_truncation": 131702881.7222313
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0009.jsonl",
+        "bytes": 1166111356,
+        "draws": 32,
+        "estimated_text_tokens": 258926868.34804434,
+        "standard_error": 3917025.2005439354,
+        "estimated_rows": 344654.05052821076,
+        "estimated_tokens_after_449_token_document_truncation": 137701411.6455856
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0010.jsonl",
+        "bytes": 1140030280,
+        "draws": 32,
+        "estimated_text_tokens": 253777149.26893324,
+        "standard_error": 4760261.795953495,
+        "estimated_rows": 425623.6745131019,
+        "estimated_tokens_after_449_token_document_truncation": 146900501.41363525
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0011.jsonl",
+        "bytes": 1148474128,
+        "draws": 32,
+        "estimated_text_tokens": 255103891.8213264,
+        "standard_error": 4746431.560438294,
+        "estimated_rows": 411232.6051253048,
+        "estimated_tokens_after_449_token_document_truncation": 144204842.9126939
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0012.jsonl",
+        "bytes": 1147625458,
+        "draws": 32,
+        "estimated_text_tokens": 251174097.41604847,
+        "standard_error": 4712862.676058062,
+        "estimated_rows": 390862.30285634263,
+        "estimated_tokens_after_449_token_document_truncation": 151704001.402367
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0013.jsonl",
+        "bytes": 1068679336,
+        "draws": 32,
+        "estimated_text_tokens": 240796733.26957247,
+        "standard_error": 4165743.2078069923,
+        "estimated_rows": 410658.52281128464,
+        "estimated_tokens_after_449_token_document_truncation": 145302451.2411733
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0014.jsonl",
+        "bytes": 1084635147,
+        "draws": 32,
+        "estimated_text_tokens": 240769724.5872839,
+        "standard_error": 3822210.16966598,
+        "estimated_rows": 392650.5840006402,
+        "estimated_tokens_after_449_token_document_truncation": 159360280.989018
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0015.jsonl",
+        "bytes": 1092849995,
+        "draws": 32,
+        "estimated_text_tokens": 247947263.359287,
+        "standard_error": 4926808.7289888,
+        "estimated_rows": 425321.4710150583,
+        "estimated_tokens_after_449_token_document_truncation": 156207992.43579087
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0016.jsonl",
+        "bytes": 1060497946,
+        "draws": 32,
+        "estimated_text_tokens": 244094236.43895796,
+        "standard_error": 6311745.266435456,
+        "estimated_rows": 306232.8839137479,
+        "estimated_tokens_after_449_token_document_truncation": 125217331.2688133
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_head_0017.jsonl",
+        "bytes": 141650346,
+        "draws": 32,
+        "estimated_text_tokens": 32037760.821027935,
+        "standard_error": 745567.061748303,
+        "estimated_rows": 36800.80363451331,
+        "estimated_tokens_after_449_token_document_truncation": 15896610.200398322
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0000.jsonl",
+        "bytes": 1281078650,
+        "draws": 32,
+        "estimated_text_tokens": 281422508.6257359,
+        "standard_error": 4833534.032127519,
+        "estimated_rows": 354079.5768012941,
+        "estimated_tokens_after_449_token_document_truncation": 146498064.93485034
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0001.jsonl",
+        "bytes": 1170368265,
+        "draws": 32,
+        "estimated_text_tokens": 258452896.74293476,
+        "standard_error": 3301783.3456655163,
+        "estimated_rows": 383524.4269841094,
+        "estimated_tokens_after_449_token_document_truncation": 150064389.1408076
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0002.jsonl",
+        "bytes": 1161067247,
+        "draws": 32,
+        "estimated_text_tokens": 255168078.30593327,
+        "standard_error": 4979406.372115312,
+        "estimated_rows": 343335.5263174376,
+        "estimated_tokens_after_449_token_document_truncation": 126036501.27090405
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0003.jsonl",
+        "bytes": 1141693394,
+        "draws": 32,
+        "estimated_text_tokens": 245422213.15639895,
+        "standard_error": 4319631.723857837,
+        "estimated_rows": 344178.65318523854,
+        "estimated_tokens_after_449_token_document_truncation": 145657669.86508536
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0004.jsonl",
+        "bytes": 1141741695,
+        "draws": 32,
+        "estimated_text_tokens": 245408354.42644396,
+        "standard_error": 4746697.285163746,
+        "estimated_rows": 401327.33678030345,
+        "estimated_tokens_after_449_token_document_truncation": 151821618.1811927
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0005.jsonl",
+        "bytes": 1132241849,
+        "draws": 32,
+        "estimated_text_tokens": 253698809.83916074,
+        "standard_error": 6050510.070045156,
+        "estimated_rows": 367101.74275622517,
+        "estimated_tokens_after_449_token_document_truncation": 131527131.59201157
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0006.jsonl",
+        "bytes": 1141029168,
+        "draws": 32,
+        "estimated_text_tokens": 250954057.90219647,
+        "standard_error": 4869345.07671174,
+        "estimated_rows": 391622.28024231305,
+        "estimated_tokens_after_449_token_document_truncation": 158494248.38211915
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0007.jsonl",
+        "bytes": 1140147825,
+        "draws": 32,
+        "estimated_text_tokens": 249338739.36182204,
+        "standard_error": 3775929.8295510337,
+        "estimated_rows": 361885.43703030056,
+        "estimated_tokens_after_449_token_document_truncation": 138697254.5066804
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0008.jsonl",
+        "bytes": 1116788122,
+        "draws": 32,
+        "estimated_text_tokens": 242189537.02957195,
+        "standard_error": 4621101.528286194,
+        "estimated_rows": 308702.9573468621,
+        "estimated_tokens_after_449_token_document_truncation": 136145137.7302481
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0009.jsonl",
+        "bytes": 1102385887,
+        "draws": 32,
+        "estimated_text_tokens": 244436709.59087443,
+        "standard_error": 4835294.410397315,
+        "estimated_rows": 382187.01981966704,
+        "estimated_tokens_after_449_token_document_truncation": 145646545.5839899
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0010.jsonl",
+        "bytes": 1109776581,
+        "draws": 32,
+        "estimated_text_tokens": 251322696.09836546,
+        "standard_error": 4938307.801754051,
+        "estimated_rows": 373912.1859539539,
+        "estimated_tokens_after_449_token_document_truncation": 151029085.60592395
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0011.jsonl",
+        "bytes": 1110974010,
+        "draws": 32,
+        "estimated_text_tokens": 245388372.5104365,
+        "standard_error": 4674747.454336899,
+        "estimated_rows": 355015.85941861634,
+        "estimated_tokens_after_449_token_document_truncation": 133710038.24100405
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0012.jsonl",
+        "bytes": 1113231115,
+        "draws": 32,
+        "estimated_text_tokens": 247876982.02134115,
+        "standard_error": 5180922.353923855,
+        "estimated_rows": 426814.53590405075,
+        "estimated_tokens_after_449_token_document_truncation": 162355670.74308485
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0013.jsonl",
+        "bytes": 1090091890,
+        "draws": 32,
+        "estimated_text_tokens": 245955358.63431355,
+        "standard_error": 7506724.539778394,
+        "estimated_rows": 342103.7283622237,
+        "estimated_tokens_after_449_token_document_truncation": 150257729.65408033
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0014.jsonl",
+        "bytes": 1097567016,
+        "draws": 32,
+        "estimated_text_tokens": 240740156.57502314,
+        "standard_error": 3427222.377468776,
+        "estimated_rows": 272824.3825498143,
+        "estimated_tokens_after_449_token_document_truncation": 120148284.25893778
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0015.jsonl",
+        "bytes": 1100025258,
+        "draws": 32,
+        "estimated_text_tokens": 240037854.9513312,
+        "standard_error": 5627849.809026924,
+        "estimated_rows": 371111.150087187,
+        "estimated_tokens_after_449_token_document_truncation": 148308765.85521218
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0016.jsonl",
+        "bytes": 1043489161,
+        "draws": 32,
+        "estimated_text_tokens": 232617690.51397026,
+        "standard_error": 3338757.0557315373,
+        "estimated_rows": 342071.6318560206,
+        "estimated_tokens_after_449_token_document_truncation": 129502659.29016851
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0017.jsonl",
+        "bytes": 1042374212,
+        "draws": 32,
+        "estimated_text_tokens": 229132210.61939034,
+        "standard_error": 5064756.950535675,
+        "estimated_rows": 341040.2183755138,
+        "estimated_tokens_after_449_token_document_truncation": 131739666.45971768
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0018.jsonl",
+        "bytes": 1072471978,
+        "draws": 32,
+        "estimated_text_tokens": 237358664.7142524,
+        "standard_error": 4237994.322629742,
+        "estimated_rows": 380565.265344779,
+        "estimated_tokens_after_449_token_document_truncation": 147550396.35555035
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0019.jsonl",
+        "bytes": 1057114094,
+        "draws": 32,
+        "estimated_text_tokens": 230306263.33748543,
+        "standard_error": 4689740.841308013,
+        "estimated_rows": 443646.73486233,
+        "estimated_tokens_after_449_token_document_truncation": 147205291.63449547
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0020.jsonl",
+        "bytes": 1035965524,
+        "draws": 32,
+        "estimated_text_tokens": 230817143.2910993,
+        "standard_error": 4020711.4125699685,
+        "estimated_rows": 343521.39953623706,
+        "estimated_tokens_after_449_token_document_truncation": 132718631.18143122
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-40_zh_middle_0021.jsonl",
+        "bytes": 206438835,
+        "draws": 32,
+        "estimated_text_tokens": 46476392.28917148,
+        "standard_error": 658331.8866675937,
+        "estimated_rows": 76706.8898683477,
+        "estimated_tokens_after_449_token_document_truncation": 27762514.71975126
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0000.jsonl",
+        "bytes": 1439534122,
+        "draws": 32,
+        "estimated_text_tokens": 331699872.3774297,
+        "standard_error": 6851123.507464272,
+        "estimated_rows": 407330.2799259521,
+        "estimated_tokens_after_449_token_document_truncation": 165768625.90503109
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0001.jsonl",
+        "bytes": 1415741042,
+        "draws": 32,
+        "estimated_text_tokens": 331108934.0965676,
+        "standard_error": 14446174.72318941,
+        "estimated_rows": 520089.29510366195,
+        "estimated_tokens_after_449_token_document_truncation": 205026030.2580748
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0002.jsonl",
+        "bytes": 1440704227,
+        "draws": 32,
+        "estimated_text_tokens": 322394570.4090475,
+        "standard_error": 7295976.9092152165,
+        "estimated_rows": 478864.4642429517,
+        "estimated_tokens_after_449_token_document_truncation": 185903256.96941522
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0003.jsonl",
+        "bytes": 1430457485,
+        "draws": 32,
+        "estimated_text_tokens": 334678808.1170406,
+        "standard_error": 7447723.1959815845,
+        "estimated_rows": 462380.4139180204,
+        "estimated_tokens_after_449_token_document_truncation": 184346445.8323773
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0004.jsonl",
+        "bytes": 1417833000,
+        "draws": 32,
+        "estimated_text_tokens": 317136764.0797462,
+        "standard_error": 6971786.408346797,
+        "estimated_rows": 393797.50052066235,
+        "estimated_tokens_after_449_token_document_truncation": 157367491.90367332
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0005.jsonl",
+        "bytes": 1394864413,
+        "draws": 32,
+        "estimated_text_tokens": 318245886.9487956,
+        "standard_error": 5274932.5804300625,
+        "estimated_rows": 437530.35660342564,
+        "estimated_tokens_after_449_token_document_truncation": 155132223.24470454
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0006.jsonl",
+        "bytes": 1382049930,
+        "draws": 32,
+        "estimated_text_tokens": 306112399.0390938,
+        "standard_error": 5797702.579772533,
+        "estimated_rows": 462020.6077852338,
+        "estimated_tokens_after_449_token_document_truncation": 182678675.18051538
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0007.jsonl",
+        "bytes": 1389413066,
+        "draws": 32,
+        "estimated_text_tokens": 318198742.7818805,
+        "standard_error": 5954104.574683095,
+        "estimated_rows": 528728.0348654431,
+        "estimated_tokens_after_449_token_document_truncation": 199264058.41026503
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0008.jsonl",
+        "bytes": 1372250480,
+        "draws": 32,
+        "estimated_text_tokens": 293948912.78053355,
+        "standard_error": 4881048.295125084,
+        "estimated_rows": 442756.4278971781,
+        "estimated_tokens_after_449_token_document_truncation": 156219288.67555335
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0009.jsonl",
+        "bytes": 1320233854,
+        "draws": 32,
+        "estimated_text_tokens": 291288140.19191015,
+        "standard_error": 5826325.292322889,
+        "estimated_rows": 390669.18363876006,
+        "estimated_tokens_after_449_token_document_truncation": 157172397.7637108
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_head_0010.jsonl",
+        "bytes": 268974820,
+        "draws": 32,
+        "estimated_text_tokens": 57066564.708245255,
+        "standard_error": 1058954.028597786,
+        "estimated_rows": 75221.33094536077,
+        "estimated_tokens_after_449_token_document_truncation": 29581135.967477087
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0000.jsonl",
+        "bytes": 1303787631,
+        "draws": 32,
+        "estimated_text_tokens": 291028674.0035129,
+        "standard_error": 4846052.245363389,
+        "estimated_rows": 342048.0233588187,
+        "estimated_tokens_after_449_token_document_truncation": 149286985.60493946
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0001.jsonl",
+        "bytes": 1276161727,
+        "draws": 32,
+        "estimated_text_tokens": 276623413.57260376,
+        "standard_error": 5460849.842777623,
+        "estimated_rows": 492268.36982272787,
+        "estimated_tokens_after_449_token_document_truncation": 173805232.3916471
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0002.jsonl",
+        "bytes": 1272439359,
+        "draws": 32,
+        "estimated_text_tokens": 272908665.5331049,
+        "standard_error": 4773104.024618121,
+        "estimated_rows": 450839.0406598033,
+        "estimated_tokens_after_449_token_document_truncation": 164719583.6421617
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0003.jsonl",
+        "bytes": 1296157589,
+        "draws": 32,
+        "estimated_text_tokens": 295523516.5261201,
+        "standard_error": 5870771.864121068,
+        "estimated_rows": 369099.8627410538,
+        "estimated_tokens_after_449_token_document_truncation": 153477938.82482275
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0004.jsonl",
+        "bytes": 1283236027,
+        "draws": 32,
+        "estimated_text_tokens": 279659964.0945219,
+        "standard_error": 4676562.698359462,
+        "estimated_rows": 409390.60141181946,
+        "estimated_tokens_after_449_token_document_truncation": 158360875.2382489
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0005.jsonl",
+        "bytes": 1278285588,
+        "draws": 32,
+        "estimated_text_tokens": 275804681.57388,
+        "standard_error": 4338698.976913721,
+        "estimated_rows": 372244.53557648975,
+        "estimated_tokens_after_449_token_document_truncation": 145004752.36178872
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0006.jsonl",
+        "bytes": 1277143842,
+        "draws": 32,
+        "estimated_text_tokens": 281360122.5328917,
+        "standard_error": 5645996.666539645,
+        "estimated_rows": 450631.9950885129,
+        "estimated_tokens_after_449_token_document_truncation": 173488134.17740464
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0007.jsonl",
+        "bytes": 1256351931,
+        "draws": 32,
+        "estimated_text_tokens": 278085893.14122576,
+        "standard_error": 5762193.142598003,
+        "estimated_rows": 529695.7485776872,
+        "estimated_tokens_after_449_token_document_truncation": 188221143.4118867
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0008.jsonl",
+        "bytes": 1252000896,
+        "draws": 32,
+        "estimated_text_tokens": 280616516.50329083,
+        "standard_error": 6448429.288619615,
+        "estimated_rows": 430548.227528787,
+        "estimated_tokens_after_449_token_document_truncation": 165524770.0482844
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0009.jsonl",
+        "bytes": 1249217911,
+        "draws": 32,
+        "estimated_text_tokens": 264128948.12453315,
+        "standard_error": 3860491.747225247,
+        "estimated_rows": 376829.23967595916,
+        "estimated_tokens_after_449_token_document_truncation": 147603222.2354682
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0010.jsonl",
+        "bytes": 1242327114,
+        "draws": 32,
+        "estimated_text_tokens": 267523712.58810046,
+        "standard_error": 5120156.994794759,
+        "estimated_rows": 351365.2659324126,
+        "estimated_tokens_after_449_token_document_truncation": 149252410.99168932
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0011.jsonl",
+        "bytes": 1239091373,
+        "draws": 32,
+        "estimated_text_tokens": 274225029.6953062,
+        "standard_error": 5005911.3537319815,
+        "estimated_rows": 349149.3431226136,
+        "estimated_tokens_after_449_token_document_truncation": 136238505.6111161
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0012.jsonl",
+        "bytes": 1192522221,
+        "draws": 32,
+        "estimated_text_tokens": 260981150.64994258,
+        "standard_error": 4990002.449799062,
+        "estimated_rows": 380729.66108516406,
+        "estimated_tokens_after_449_token_document_truncation": 140432718.34991154
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-45_zh_middle_0013.jsonl",
+        "bytes": 943405890,
+        "draws": 32,
+        "estimated_text_tokens": 207553425.57534614,
+        "standard_error": 3814470.0276063434,
+        "estimated_rows": 251363.3193907933,
+        "estimated_tokens_after_449_token_document_truncation": 106984570.23433201
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_head_0000.jsonl",
+        "bytes": 1455746193,
+        "draws": 32,
+        "estimated_text_tokens": 330080064.07571435,
+        "standard_error": 5816041.414410868,
+        "estimated_rows": 717687.7622595223,
+        "estimated_tokens_after_449_token_document_truncation": 224499335.43386015
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_head_0001.jsonl",
+        "bytes": 1443446521,
+        "draws": 32,
+        "estimated_text_tokens": 355260846.78201735,
+        "standard_error": 11706981.955431487,
+        "estimated_rows": 451173.29415138555,
+        "estimated_tokens_after_449_token_document_truncation": 166290025.31055385
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_head_0002.jsonl",
+        "bytes": 1431109269,
+        "draws": 32,
+        "estimated_text_tokens": 367583336.56220835,
+        "standard_error": 27937447.460662436,
+        "estimated_rows": 427375.0335348564,
+        "estimated_tokens_after_449_token_document_truncation": 169705080.4564771
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_head_0003.jsonl",
+        "bytes": 1416345698,
+        "draws": 32,
+        "estimated_text_tokens": 322165042.55904055,
+        "standard_error": 7172568.553616194,
+        "estimated_rows": 474793.8992646119,
+        "estimated_tokens_after_449_token_document_truncation": 189145416.3673426
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_head_0004.jsonl",
+        "bytes": 1438164241,
+        "draws": 32,
+        "estimated_text_tokens": 311497315.69279397,
+        "standard_error": 5108922.6740438575,
+        "estimated_rows": 500549.65338861634,
+        "estimated_tokens_after_449_token_document_truncation": 184413265.1394982
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_head_0005.jsonl",
+        "bytes": 1426477813,
+        "draws": 32,
+        "estimated_text_tokens": 320872167.38618386,
+        "standard_error": 5409949.682395681,
+        "estimated_rows": 504084.45904749946,
+        "estimated_tokens_after_449_token_document_truncation": 195969815.59713793
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_head_0006.jsonl",
+        "bytes": 1374696182,
+        "draws": 32,
+        "estimated_text_tokens": 303748630.6915794,
+        "standard_error": 7203475.053547064,
+        "estimated_rows": 461196.8338237156,
+        "estimated_tokens_after_449_token_document_truncation": 182703610.05999887
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_head_0007.jsonl",
+        "bytes": 1280318716,
+        "draws": 32,
+        "estimated_text_tokens": 292393279.5612241,
+        "standard_error": 11781717.2657964,
+        "estimated_rows": 438536.8797781697,
+        "estimated_tokens_after_449_token_document_truncation": 149021123.05912384
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_head_0008.jsonl",
+        "bytes": 1386873980,
+        "draws": 32,
+        "estimated_text_tokens": 314692360.97045493,
+        "standard_error": 6328697.387468833,
+        "estimated_rows": 474281.0490701738,
+        "estimated_tokens_after_449_token_document_truncation": 182948603.28165188
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_head_0009.jsonl",
+        "bytes": 993172122,
+        "draws": 32,
+        "estimated_text_tokens": 217861683.8272312,
+        "standard_error": 3758646.783110085,
+        "estimated_rows": 351498.1024535383,
+        "estimated_tokens_after_449_token_document_truncation": 139390923.34895828
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0000.jsonl",
+        "bytes": 1422695790,
+        "draws": 32,
+        "estimated_text_tokens": 321216743.97265756,
+        "standard_error": 5535330.733300688,
+        "estimated_rows": 472704.207528622,
+        "estimated_tokens_after_449_token_document_truncation": 181294905.85918987
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0001.jsonl",
+        "bytes": 1416577521,
+        "draws": 32,
+        "estimated_text_tokens": 306578023.5101332,
+        "standard_error": 4947256.7047300665,
+        "estimated_rows": 400297.0852333398,
+        "estimated_tokens_after_449_token_document_truncation": 161023754.38399103
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0002.jsonl",
+        "bytes": 1399029193,
+        "draws": 32,
+        "estimated_text_tokens": 317317134.15985465,
+        "standard_error": 5190226.536865326,
+        "estimated_rows": 449309.102267941,
+        "estimated_tokens_after_449_token_document_truncation": 183333504.33114976
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0003.jsonl",
+        "bytes": 1385079016,
+        "draws": 32,
+        "estimated_text_tokens": 308659709.3790727,
+        "standard_error": 5321900.2978152055,
+        "estimated_rows": 515803.1682632126,
+        "estimated_tokens_after_449_token_document_truncation": 188171783.60865933
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0004.jsonl",
+        "bytes": 1379435647,
+        "draws": 32,
+        "estimated_text_tokens": 301389549.71454555,
+        "standard_error": 6106891.107501681,
+        "estimated_rows": 428311.72106753214,
+        "estimated_tokens_after_449_token_document_truncation": 164215614.37409982
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0005.jsonl",
+        "bytes": 1385068748,
+        "draws": 32,
+        "estimated_text_tokens": 308742311.36905926,
+        "standard_error": 6381805.004633047,
+        "estimated_rows": 382311.23968550126,
+        "estimated_tokens_after_449_token_document_truncation": 156557544.16052344
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0006.jsonl",
+        "bytes": 1388062360,
+        "draws": 32,
+        "estimated_text_tokens": 308311147.22013134,
+        "standard_error": 5527718.447953291,
+        "estimated_rows": 436798.41139124904,
+        "estimated_tokens_after_449_token_document_truncation": 171544681.6201897
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0007.jsonl",
+        "bytes": 1347642977,
+        "draws": 32,
+        "estimated_text_tokens": 299214078.7165593,
+        "standard_error": 6303323.601644439,
+        "estimated_rows": 477228.931473408,
+        "estimated_tokens_after_449_token_document_truncation": 177169676.9222634
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0008.jsonl",
+        "bytes": 1322371062,
+        "draws": 32,
+        "estimated_text_tokens": 294630766.49271244,
+        "standard_error": 6093215.598086681,
+        "estimated_rows": 351184.87895339367,
+        "estimated_tokens_after_449_token_document_truncation": 146327315.01405174
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0009.jsonl",
+        "bytes": 1224202173,
+        "draws": 32,
+        "estimated_text_tokens": 275014874.6262177,
+        "standard_error": 5189341.461552162,
+        "estimated_rows": 453679.71404259355,
+        "estimated_tokens_after_449_token_document_truncation": 171552261.5589794
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0010.jsonl",
+        "bytes": 1342837396,
+        "draws": 32,
+        "estimated_text_tokens": 299293344.47390914,
+        "standard_error": 6528990.431173127,
+        "estimated_rows": 417449.3435748861,
+        "estimated_tokens_after_449_token_document_truncation": 159948752.43487063
+      },
+      {
+        "file": "/home/zwb/ai/data/text/skypile-subset/data/2020-50_zh_middle_0011.jsonl",
+        "bytes": 1028316908,
+        "draws": 32,
+        "estimated_text_tokens": 224421329.6736071,
+        "standard_error": 3450958.5709671876,
+        "estimated_rows": 365718.9267771385,
+        "estimated_tokens_after_449_token_document_truncation": 139734593.39942724
+      }
+    ]
+  }
+}

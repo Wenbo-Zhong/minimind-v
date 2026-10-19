@@ -1,0 +1,58 @@
+{
+  "mixing_unit": "tokens",
+  "shuffle_sources": true,
+  "seed": 42,
+  "sources": [
+    {
+      "name": "skypile_chinese_packed",
+      "stages": [
+        "pretrain"
+      ],
+      "format": "json",
+      "files": "/home/zwb/ai/data/text/skypile-subset/data/*.jsonl",
+      "packing": true,
+      "weight": 45,
+      "split": "validation"
+    },
+    {
+      "name": "fineweb_edu_english_packed",
+      "stages": [
+        "pretrain"
+      ],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/*.parquet",
+      "packing": true,
+      "weight": 35,
+      "split": "validation"
+    },
+    {
+      "name": "infinity_code_packed",
+      "stages": [
+        "pretrain"
+      ],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/sft/infinity-instruct/7M_domains/code/*.parquet",
+      "packing": true,
+      "weight": 10,
+      "split": "validation"
+    },
+    {
+      "name": "infinity_math_packed",
+      "stages": [
+        "pretrain"
+      ],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/sft/infinity-instruct/7M_domains/math/*.parquet",
+      "packing": true,
+      "weight": 10,
+      "split": "validation"
+    }
+  ],
+  "shuffle_buffer": 256,
+  "loader": "stateful_main_process_v1",
+  "exclude_questions": [
+    "/home/zwb/ai/data/eval/gsm8k/main/test-00000-of-00001.parquet",
+    "/home/zwb/ai/data/eval/cmath/cmath_dev.jsonl",
+    "/home/zwb/ai/data/eval/cmath/cmath_test.jsonl"
+  ]
+}

@@ -5,6 +5,7 @@ __package__ = "trainer"
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import argparse
+import itertools
 import time
 import warnings
 import datasets
@@ -16,7 +17,7 @@ from torch.nn.parallel import DistributedDataParallel
 from torch.utils.data import DataLoader, DistributedSampler
 from transformers import AutoTokenizer
 from model.model_vlm import MiniMindVLM, VLMConfig
-from dataset.lm_dataset import VLMDataset
+from dataset.lm_dataset import LocalMultiSourceVLMDataset
 from trainer.trainer_utils import get_lr, Logger, is_main_process, init_distributed_mode, setup_seed, init_vlm_model, vlm_checkpoint, SkipBatchSampler, vlm_collate_fn
 
 warnings.filterwarnings('ignore')
@@ -25,7 +26,12 @@ warnings.filterwarnings('ignore')
 def train_epoch(epoch, loader, iters, start_step=0, wandb=None):
     start_time = time.time()
     last_step = start_step
+    loss_sum = 0.0
+    aux_loss_sum = 0.0
+    log_batches = 0
     for step, (input_ids, labels, pixel_values) in enumerate(loader, start=start_step + 1):
+        if step > iters:
+            break
         input_ids = input_ids.to(args.device)
         labels = labels.to(args.device)
         pixel_values = {k: v.to(args.device) for k, v in pixel_values.items()} if isinstance(pixel_values, dict) else pixel_values.to(args.device)
@@ -37,6 +43,11 @@ def train_epoch(epoch, loader, iters, start_step=0, wandb=None):
         with autocast_ctx:
             res = model(input_ids, labels=labels, pixel_values=pixel_values)
             loss = res.loss + res.aux_loss
+            if not torch.isfinite(loss):
+                raise FloatingPointError(f'Non-finite loss at micro_step={step}: {loss.item()}')
+            loss_sum += loss.detach().item()
+            aux_loss_sum += res.aux_loss.detach().item() if res.aux_loss is not None else 0.0
+            log_batches += 1
             loss = loss / args.accumulation_steps
 
         scaler.scale(loss).backward()
@@ -52,13 +63,17 @@ def train_epoch(epoch, loader, iters, start_step=0, wandb=None):
 
         if step % args.log_interval == 0 or step == iters:
             spend_time = time.time() - start_time
-            current_loss = loss.item() * args.accumulation_steps
-            current_aux_loss = res.aux_loss.item() if res.aux_loss is not None else 0.0
+            current_loss = loss_sum / max(log_batches, 1)
+            current_aux_loss = aux_loss_sum / max(log_batches, 1)
             current_logits_loss = current_loss - current_aux_loss
             current_lr = optimizer.param_groups[-1]['lr']
             eta_min = spend_time / max(step - start_step, 1) * (iters - step) // 60
-            Logger(f'Epoch:[{epoch + 1}/{args.epochs}]({step}/{iters}), loss: {current_loss:.4f}, logits_loss: {current_logits_loss:.4f}, aux_loss: {current_aux_loss:.4f}, lr: {current_lr:.8f}, epoch_time: {eta_min:.1f}min')
+            optimizer_updates = step // args.accumulation_steps
+            Logger(f'Epoch:[{epoch + 1}/{args.epochs}] micro_step:[{step}/{iters}], optimizer_updates:{optimizer_updates}, avg_loss:{current_loss:.4f}, avg_logits_loss:{current_logits_loss:.4f}, avg_aux_loss:{current_aux_loss:.4f}, lr:{current_lr:.8f}, eta:{eta_min:.1f}min')
             if wandb: wandb.log({"loss": current_loss, "logits_loss": current_logits_loss, "aux_loss": current_aux_loss, "learning_rate": current_lr, "epoch_time": eta_min})
+            loss_sum = 0.0
+            aux_loss_sum = 0.0
+            log_batches = 0
 
         if (step % args.save_interval == 0 or step == iters) and is_main_process():
             model.eval()
@@ -71,7 +86,9 @@ def train_epoch(epoch, loader, iters, start_step=0, wandb=None):
                 key: value for key, value in state_dict.items() if not key.startswith('vision_encoder.')
             }
             clean_state_dict = {k: v.half().cpu() for k, v in clean_state_dict.items()}  # 半精度保存并移到CPU
-            torch.save(clean_state_dict, ckp)
+            ckp_tmp = ckp + '.tmp'
+            torch.save(clean_state_dict, ckp_tmp)
+            os.replace(ckp_tmp, ckp)
             vlm_checkpoint(vlm_config, weight=args.save_weight, model=model, optimizer=optimizer, 
                          epoch=epoch, step=step, wandb=wandb, save_dir='../checkpoints', scaler=scaler)
             model.train()
@@ -91,24 +108,28 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="MiniMind-V SFT")
     parser.add_argument("--save_dir", type=str, default="../out", help="模型保存目录")
     parser.add_argument('--save_weight', default='sft_vlm', type=str, help="保存权重的前缀名")
-    parser.add_argument("--epochs", type=int, default=2, help="训练轮数")
-    parser.add_argument("--batch_size", type=int, default=4, help="batch size")
-    parser.add_argument("--learning_rate", type=float, default=5e-6, help="初始学习率")
+    parser.add_argument("--epochs", type=int, default=3, help="训练轮数")
+    parser.add_argument("--batch_size", type=int, default=16, help="batch size")
+    parser.add_argument("--learning_rate", type=float, default=1e-5, help="初始学习率")
     parser.add_argument("--device", type=str, default="cuda:0" if torch.cuda.is_available() else "cpu", help="训练设备")
     parser.add_argument("--dtype", type=str, default="bfloat16", help="混合精度类型")
     parser.add_argument("--num_workers", type=int, default=2, help="数据加载线程数")
-    parser.add_argument("--accumulation_steps", type=int, default=1, help="梯度累积步数")
+    parser.add_argument("--accumulation_steps", type=int, default=8, help="梯度累积步数")
     parser.add_argument("--grad_clip", type=float, default=1.0, help="梯度裁剪阈值")
     parser.add_argument("--log_interval", type=int, default=100, help="日志打印间隔")
-    parser.add_argument("--save_interval", type=int, default=1000, help="模型保存间隔")
-    parser.add_argument('--hidden_size', default=768, type=int, help="隐藏层维度")
-    parser.add_argument('--num_hidden_layers', default=8, type=int, help="隐藏层数量")
+    parser.add_argument("--save_interval", type=int, default=5000, help="模型保存间隔")
+    parser.add_argument('--hidden_size', default=1024, type=int, help="隐藏层维度")
+    parser.add_argument('--num_hidden_layers', default=24, type=int, help="隐藏层数量")
     parser.add_argument('--max_seq_len', default=768, type=int, help="训练的最大截断长度")
     parser.add_argument('--use_moe', default=0, type=int, choices=[0, 1], help="是否使用MoE架构（0=否，1=是）")
-    parser.add_argument("--data_path", type=str, default="../dataset/sft_i2t.parquet", help="训练数据路径")
+    parser.add_argument("--data_config", type=str, default=os.path.join(os.path.dirname(__file__), '..', 'configs', 'local_datasets.json'), help="本地多源数据配置 JSON")
+    parser.add_argument("--tokenizer_path", type=str, default=os.path.join(os.path.dirname(__file__), '..', 'model'), help="tokenizer 路径（worker 进程懒加载用）")
+    parser.add_argument("--vision_model_path", type=str, default=os.path.join(os.path.dirname(__file__), '..', 'model', 'siglip2-base-p32-256-ve'), help="视觉模型路径（worker 进程懒加载用）")
+    parser.add_argument("--steps_per_epoch", type=int, default=10000, help="每轮micro-batch数；实际optimizer更新数为该值/accumulation_steps")
     parser.add_argument('--from_weight', default='pretrain_vlm', type=str, help="基于哪个权重训练，为none则不基于任何权重训练")
+    parser.add_argument('--from_weight_path', default=None, type=str, help="直接指定初始化权重路径（优先于from_weight）")
     parser.add_argument('--from_resume', default=0, type=int, choices=[0, 1], help="是否自动检测&续训（0=否，1=是）")
-    parser.add_argument('--freeze_llm', default=1, type=int, choices=[0, 1, 2], help="冻结策略（0=完全可训练，1=冻结+解冻首尾层，2=完全冻结仅训练proj）")
+    parser.add_argument('--freeze_llm', default=0, type=int, choices=[0, 1, 2], help="冻结策略（0=完全可训练，1=冻结+解冻首尾层，2=完全冻结仅训练proj）")
     parser.add_argument("--use_compile", default=0, type=int, choices=[0, 1], help="是否使用torch.compile加速（0=否，1=是）")
     parser.add_argument("--use_wandb", action="store_true", help="是否使用wandb")
     parser.add_argument("--wandb_project", type=str, default="MiniMind-V-SFT", help="wandb项目名")
@@ -139,9 +160,11 @@ if __name__ == "__main__":
         wandb.init(project=args.wandb_project, name=wandb_run_name, id=wandb_id, resume=resume)
     
     # ========== 5. 定义模型、数据、优化器 ==========
-    model, tokenizer, preprocess = init_vlm_model(vlm_config, from_weight=args.from_weight, device=args.device, freeze_llm=args.freeze_llm)
-    train_ds = VLMDataset(args.data_path, tokenizer, preprocess=preprocess, image_special_token=vlm_config.image_special_token, image_token_len=vlm_config.image_token_len, max_length=vlm_config.max_seq_len)
-    train_sampler = DistributedSampler(train_ds) if dist.is_initialized() else None
+    model, tokenizer, preprocess = init_vlm_model(vlm_config, from_weight=args.from_weight, from_weight_path=args.from_weight_path, device=args.device, freeze_llm=args.freeze_llm)
+    train_ds = LocalMultiSourceVLMDataset(args.data_config, tokenizer, preprocess=preprocess, image_special_token=vlm_config.image_special_token, image_token_len=vlm_config.image_token_len, max_length=vlm_config.max_seq_len, stage='sft', tokenizer_path=args.tokenizer_path, vision_model_path=args.vision_model_path)
+    Logger('SFT configured source mix (before truncation/filter rejection):')
+    for name, weight, ratio, filters in train_ds.source_summary():
+        Logger(f'  {name}: weight={weight}, ratio={ratio:.1f}%, filters={filters or "none"}')
     scaler = torch.cuda.amp.GradScaler(enabled=(args.dtype == 'float16'))
     optimizer = optim.AdamW(model.parameters(), lr=args.learning_rate)
     
@@ -164,16 +187,19 @@ if __name__ == "__main__":
     
     # ========== 8. 开始训练 ==========
     for epoch in range(start_epoch, args.epochs):
-        train_sampler and train_sampler.set_epoch(epoch)
-        setup_seed(42 + epoch); indices = torch.randperm(len(train_ds)).tolist()
+        setup_seed(42 + epoch)
         skip = start_step if (epoch == start_epoch and start_step > 0) else 0
-        batch_sampler = SkipBatchSampler(train_sampler or indices, args.batch_size, skip)
-        loader = DataLoader(train_ds, batch_sampler=batch_sampler, num_workers=args.num_workers, pin_memory=True, collate_fn=vlm_collate_fn)
+        loader = DataLoader(
+            train_ds, batch_size=args.batch_size, num_workers=args.num_workers,
+            pin_memory=True, collate_fn=vlm_collate_fn,
+            persistent_workers=(args.num_workers > 0),
+            prefetch_factor=4 if args.num_workers > 0 else None,
+        )
         if skip > 0: 
             Logger(f'Epoch [{epoch + 1}/{args.epochs}]: 跳过前{start_step}个step，从step {start_step + 1}开始')
-            train_epoch(epoch, loader, len(loader) + skip, start_step, wandb)
+            train_epoch(epoch, itertools.islice(loader, skip, None), args.steps_per_epoch, start_step, wandb)
         else:
-            train_epoch(epoch, loader, len(loader), 0, wandb)
+            train_epoch(epoch, loader, args.steps_per_epoch, 0, wandb)
     
     # ========== 9. 清理分布进程 ==========
     if dist.is_initialized(): dist.destroy_process_group()

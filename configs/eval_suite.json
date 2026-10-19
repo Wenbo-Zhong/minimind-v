@@ -1,0 +1,14 @@
+{
+  "questions": [
+    {"id": "identity", "prompt": "你好，请简单介绍一下自己。", "contains_any": ["minimind", "语言模型", "AI"]},
+    {"id": "capital_cn", "prompt": "中国的首都是哪里？", "contains_all": ["北京"]},
+    {"id": "sky_blue", "prompt": "请用一句话解释天空通常为什么是蓝色的。", "contains_any": ["散射", "瑞利"]},
+    {"id": "arith_add_seen_shape", "prompt": "18加27等于多少？", "contains_all": ["45"]},
+    {"id": "arith_sub", "prompt": "91减去36等于多少？", "contains_all": ["55"]},
+    {"id": "arith_mul", "prompt": "8乘以12等于多少？", "contains_all": ["96"]},
+    {"id": "arith_div", "prompt": "72除以9等于多少？", "contains_all": ["8"]},
+    {"id": "sort", "prompt": "把数字 9、2、11、5 从小到大排列。", "contains_all": ["2", "5", "9", "11"]},
+    {"id": "code_max", "prompt": "写一个Python函数，返回非空列表中的最大值。", "contains_all": ["def", "max"]},
+    {"id": "code_even", "prompt": "写一个Python函数，判断整数是否为偶数。", "contains_all": ["def", "%", "2"]}
+  ]
+}

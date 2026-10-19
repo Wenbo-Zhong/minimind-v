@@ -1,0 +1,18 @@
+{
+  "scanned": 85176,
+  "accepted": 78854,
+  "counts": {
+    "identity": 356,
+    "arithmetic": 12000,
+    "chinese": 36688,
+    "code": 10204,
+    "tulu_short": 19784
+  },
+  "chars": {
+    "identity": 9875,
+    "arithmetic": 235487,
+    "chinese": 24185989,
+    "code": 14161532,
+    "tulu_short": 16940380
+  }
+}

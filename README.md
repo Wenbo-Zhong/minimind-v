@@ -253,6 +253,20 @@ SFT 单文件 290 万条已把 Pretrain 作为子集合并，经全局 dictionar
 python train_sft_vlm.py --epochs 2 --from_weight llm
 ```
 
+### 使用本机多源数据集
+
+仓库的默认训练数据已切换为 `configs/local_datasets.json`，读取 `/home/zwb/ai/data/{vision,text,sft}` 中的数据，不再依赖 `dataset/` 下的 `pretrain_i2t.parquet` 或 `sft_i2t.parquet`。数据通过流式方式读取，因此不会为 FineWeb-edu 和 SkyPile 创建完整本地缓存。
+
+```bash
+# 图文预训练：MiniMind-V Pretrain、LLaVA、FineWeb-edu、SkyPile
+python trainer/train_pretrain_vlm.py --from_weight llm --steps_per_epoch 1000
+
+# 指令微调：MiniMind-V SFT、OpenHermes、Infinity-Instruct
+python trainer/train_sft_vlm.py --from_weight pretrain_vlm --steps_per_epoch 1000
+```
+
+可按需要在同一配置里启停数据源或修改文件 glob；`--steps_per_epoch` 是每个 epoch 的优化步数。
+
 如果希望让 Projector 先完成一轮图文对齐，再进入 SFT，可额外执行 Pretrain：
 
 ```bash
@@ -666,3 +680,10 @@ MoE 版本的场景描述更丰富，对背景环境（城市街道、城市天�
 # 📜 许可协议
 
 本仓库遵循 [Apache-2.0 License](LICENSE) 开源协议。
+
+
+### 本地 0.85B 纯文本实验与计算器 SFT（2026-10-20）
+
+新的文本训练统一使用 `trainer/train_text.py --stage pretrain|sft`，从纯语言模型开始，视觉阶段后置。默认预训练为 45/35/10/10，SFT 为计算器数学 20%、中文通用 25%、英文通用 20%、代码 15%、无工具数学 15%、算术 5%（有效监督 token 目标）。计算器数据已转换并校验，管线短跑通过后，已由用户手动启动 100M token 预训练 pilot。完整参数、数据过滤、断点恢复限制及后续命令见 [训练方案](configs/text_training_plan.md)。
+
+关键历史评测见 [基线索引](reports/baselines/README.md)。旧补丁和非关键结果已移到 Git 忽略的本地 `archive/`，当前训练不依赖这些文件。

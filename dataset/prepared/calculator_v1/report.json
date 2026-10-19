@@ -1,0 +1,36 @@
+{
+  "source_files": [
+    "/home/zwb/ai/data/sft/open_math/Calc-ape210k/data/train-00000-of-00001-b9f022a8492442e4.parquet"
+  ],
+  "excluded_files": [
+    "/home/zwb/ai/data/sft/open_math/Calc-ape210k/data/validation-00000-of-00001-b9c45633c2837e3b.parquet",
+    "/home/zwb/ai/data/sft/open_math/Calc-ape210k/data/test-00000-of-00001-3ffa1fbd65291d25.parquet",
+    "/home/zwb/ai/data/eval/gsm8k/main/test-00000-of-00001.parquet",
+    "/home/zwb/ai/data/eval/cmath/cmath_dev.jsonl",
+    "/home/zwb/ai/data/eval/cmath/cmath_test.jsonl"
+  ],
+  "counts": {
+    "scanned_questions": 195179,
+    "train_dialogs": 261868,
+    "train_questions": 130934,
+    "validation_dialogs": 2480,
+    "validation_questions": 1240
+  },
+  "rejections": {
+    "call count outside budget": 37219,
+    "invalid syntax (<unknown>, line 1)": 21549,
+    "tool output mismatch": 963,
+    "heldout_overlap_or_duplicate": 3188,
+    "final result mismatch": 42,
+    "expression too complex": 21,
+    "exponent must be an integer between -8 and 8": 22,
+    "expression too long": 1
+  },
+  "effective_assistant_tokens": {
+    "train": 10563650,
+    "validation": 100142
+  },
+  "max_length": 1024,
+  "max_calls": 4,
+  "protocol_sha256": "1e9238eada46548fe9ee24601cae66bcadbd6b2ba5639c4fd5aa5287cbfebbd1"
+}

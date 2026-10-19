@@ -6,3 +6,35 @@ out
 website/
 docs-minimind-v/
 测试.py
+
+# Local editor settings and runtime caches
+.idea/
+.pytest_cache/
+.ruff_cache/
+
+# Training checkpoints, downloaded model weights, and run logs
+/checkpoints/
+/logs/
+/model/siglip2-base-p32-256-ve/
+*.pth
+*.pt
+*.safetensors
+*.ckpt
+*.log
+
+# Rebuildable datasets: retain small preparation reports and fingerprints
+/dataset/generated/
+/dataset/curated_sft/**
+!/dataset/curated_sft/**/
+!/dataset/curated_sft/**/*report.json
+/dataset/prepared/**
+!/dataset/prepared/**/
+!/dataset/prepared/**/report.json
+!/dataset/prepared/**/manifest.json
+
+# Local history archive and generated evaluation runs
+/archive/
+/reports/evaluations/
+
+# Local training handoff notes
+/CODEX_TRAINING_HANDOFF.md

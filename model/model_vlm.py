@@ -47,11 +47,15 @@ class MiniMindVLM(MiniMindForCausalLM):
         from transformers import logging as hf_logging
         hf_logging.set_verbosity_error()
         if not os.path.exists(model_path):
-            return None, None
+            raise FileNotFoundError(
+                f'视觉编码器路径不存在: {model_path}\n'
+                f'请先下载 SigLIP 模型: git clone https://modelscope.cn/models/gongjy/siglip2-base-p32-256-ve\n'
+                f'参考 model/model_init.md'
+            )
         try:
             model = SiglipVisionModel.from_pretrained(model_path)
-        except (RuntimeError, ValueError):
-            return None, None
+        except (RuntimeError, ValueError) as e:
+            raise RuntimeError(f'加载 SiglipVisionModel 失败: {model_path}\n{e}')
         processor = SiglipImageProcessor.from_pretrained(model_path)
         # 冻结 vision_encoder 的所有参数
         for param in model.parameters():
@@ -111,7 +115,12 @@ class MiniMindVLM(MiniMindForCausalLM):
 
         hidden_states = self.model.dropout(self.model.embed_tokens(input_ids))
 
-        if pixel_values is not None and start_pos == 0:
+        # Text-only batches carry placeholder pixels for a shared collator.  Do
+        # not waste a full frozen vision-encoder pass unless image tokens are
+        # actually present in the sequence.
+        has_image_tokens = bool(self.config.image_ids) and any(
+            torch.any(input_ids == image_id).item() for image_id in self.config.image_ids)
+        if pixel_values is not None and start_pos == 0 and has_image_tokens:
             if hasattr(pixel_values, 'keys'):
                 sample_val = next(iter(pixel_values.values()))
                 if sample_val.ndim == 5:

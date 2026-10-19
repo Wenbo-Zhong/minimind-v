@@ -1,0 +1,6 @@
+# Start exactly one controlled loader for the external RTX PRO 5000 72GB.
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{device}=="0x2bb3", TAG+="systemd", ENV{SYSTEMD_WANTS}+="egpu-nvidia-load.service"
+
+# This GPU drives a monitor; do not runtime-suspend it after add/bind.
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{device}=="0x2bb3", TEST=="power/control", ATTR{power/control}="on"
+ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{device}=="0x2bb3", TEST=="power/control", ATTR{power/control}="on"

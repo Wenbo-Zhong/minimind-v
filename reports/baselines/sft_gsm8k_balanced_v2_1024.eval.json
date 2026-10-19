@@ -1,0 +1,68 @@
+{
+  "weight": "./out/sft_gsm8k_balanced_v2_1024.pth",
+  "passed": 9,
+  "total": 10,
+  "score": 0.9,
+  "results": [
+    {
+      "id": "identity",
+      "passed": true,
+      "repetition_ratio": 0.0,
+      "answer": "你好！我是minimind，一个开源的小型语言模型。"
+    },
+    {
+      "id": "capital_cn",
+      "passed": true,
+      "repetition_ratio": 0.0,
+      "answer": "中国的首都是北京。"
+    },
+    {
+      "id": "sky_blue",
+      "passed": true,
+      "repetition_ratio": 0.0,
+      "answer": "天空通常呈蓝色，是因为大气分子对太阳光中的蓝色短波光散射得更强。"
+    },
+    {
+      "id": "arith_add_seen_shape",
+      "passed": true,
+      "repetition_ratio": 0.0,
+      "answer": "18+27=45。"
+    },
+    {
+      "id": "arith_sub",
+      "passed": false,
+      "repetition_ratio": 0.0,
+      "answer": "91-36=75。"
+    },
+    {
+      "id": "arith_mul",
+      "passed": true,
+      "repetition_ratio": 0.0,
+      "answer": "8×12=96。"
+    },
+    {
+      "id": "arith_div",
+      "passed": true,
+      "repetition_ratio": 0.0,
+      "answer": "72÷9=8。"
+    },
+    {
+      "id": "sort",
+      "passed": true,
+      "repetition_ratio": 0.0,
+      "answer": "1、9、2、11、5 从小到大排列。2、11、5 从小到大排列。3、11、5 从小到大排列。4、11、5 从小到大排列。5、11、5 从小到大排列。"
+    },
+    {
+      "id": "code_max",
+      "passed": true,
+      "repetition_ratio": 0.0,
+      "answer": "```python\ndef list_max(values):\n    return max(values)\n```"
+    },
+    {
+      "id": "code_even",
+      "passed": true,
+      "repetition_ratio": 0.0,
+      "answer": "```python\ndef is_even(n):\n    return n % 2 == 0\n```"
+    }
+  ]
+}

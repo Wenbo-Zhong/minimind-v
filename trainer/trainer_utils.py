@@ -36,7 +36,7 @@ def is_main_process():
 
 def Logger(content):
     if is_main_process():
-        print(content)
+        print(content, flush=True)
 
 
 def get_lr(current_step, total_steps, lr):
@@ -63,11 +63,18 @@ def setup_seed(seed: int):
     torch.backends.cudnn.benchmark = False
 
 
-def init_vlm_model(vlm_config, from_weight='pretrain_vlm', tokenizer_path='../model', vision_model_path='../model/siglip2-base-p32-256-ve', save_dir='../out', device='cuda', freeze_llm=0):
+def init_vlm_model(vlm_config, from_weight='pretrain_vlm', from_weight_path=None, tokenizer_path='../model', vision_model_path='../model/siglip2-base-p32-256-ve', save_dir='../out', device='cuda', freeze_llm=0):
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
     model = MiniMindVLM(vlm_config, vision_model_path=vision_model_path)
     
-    if from_weight != 'none':
+    if from_weight_path:
+        weight_path = from_weight_path
+        if not os.path.isfile(weight_path):
+            raise FileNotFoundError(f'初始化权重不存在: {weight_path}')
+        weights = torch.load(weight_path, map_location=device)
+        model.load_state_dict(weights, strict=False)
+        Logger(f'Loaded initial weights: {weight_path}')
+    elif from_weight != 'none':
         moe_suffix = '_moe' if vlm_config.use_moe else ''
         weight_path = f'{save_dir}/{from_weight}_{vlm_config.hidden_size}{moe_suffix}.pth'
         weights = torch.load(weight_path, map_location=device)
@@ -190,4 +197,3 @@ class SkipBatchSampler(Sampler):
     def __len__(self):
         total_batches = (len(self.sampler) + self.batch_size - 1) // self.batch_size
         return max(0, total_batches - self.skip_batches)
-

@@ -9,18 +9,21 @@ from transformers.modeling_outputs import MoeCausalLMOutputWithPast
 # 🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏
 class MiniMindConfig(PretrainedConfig):
     model_type = "minimind"
-    def __init__(self, hidden_size=768, num_hidden_layers=8, use_moe=False, **kwargs):
+    def __init__(self, hidden_size=512, num_hidden_layers=24, use_moe=False, **kwargs):
         super().__init__(**kwargs)
         self.hidden_size = hidden_size
         self.num_hidden_layers = num_hidden_layers
         self.use_moe = use_moe
         self.dropout = kwargs.get("dropout", 0.0)
-        self.vocab_size = kwargs.get("vocab_size", 6400)
-        self.bos_token_id = kwargs.get("bos_token_id", 1)
-        self.eos_token_id = kwargs.get("eos_token_id", 2)
+        self.vocab_size = kwargs.get("vocab_size", 151936)
+        # The bundled tokenizer uses Qwen ChatML ids.  Generation must stop on
+        # <|im_end|>, not on the unrelated legacy id 2.
+        self.bos_token_id = kwargs.get("bos_token_id", 151644)
+        self.eos_token_id = kwargs.get("eos_token_id", 151645)
+        self.pad_token_id = kwargs.get("pad_token_id", 151643)
         self.flash_attn = kwargs.get("flash_attn", True)
-        self.num_attention_heads = kwargs.get("num_attention_heads", 8)
-        self.num_key_value_heads = kwargs.get("num_key_value_heads", 4)
+        self.num_attention_heads = kwargs.get("num_attention_heads", 16)
+        self.num_key_value_heads = kwargs.get("num_key_value_heads", 8)
         self.head_dim = kwargs.get("head_dim", self.hidden_size // self.num_attention_heads)
         self.hidden_act = kwargs.get("hidden_act", 'silu')
         self.intermediate_size = kwargs.get("intermediate_size", math.ceil(hidden_size * math.pi / 64) * 64)
@@ -254,7 +257,9 @@ class MiniMindForCausalLM(PreTrainedModel, GenerationMixin):
     
     # https://github.com/jingyaogong/minimind/discussions/611
     @torch.inference_mode()
-    def generate(self, inputs=None, attention_mask=None, max_new_tokens=8192, temperature=0.85, top_p=0.85, top_k=50, eos_token_id=2, streamer=None, use_cache=True, num_return_sequences=1, do_sample=True, repetition_penalty=1.0, **kwargs):
+    def generate(self, inputs=None, attention_mask=None, max_new_tokens=8192, temperature=0.85, top_p=0.85, top_k=50, eos_token_id=None, streamer=None, use_cache=True, num_return_sequences=1, do_sample=True, repetition_penalty=1.0, **kwargs):
+        if eos_token_id is None:
+            eos_token_id = self.config.eos_token_id
         input_ids = kwargs.pop("input_ids", inputs).repeat(num_return_sequences, 1)
         attention_mask = attention_mask.repeat(num_return_sequences, 1) if attention_mask is not None else None
         past_key_values = kwargs.pop("past_key_values", None)

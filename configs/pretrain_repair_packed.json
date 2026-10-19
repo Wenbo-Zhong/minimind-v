@@ -1,0 +1,39 @@
+{
+  "mixing_unit": "tokens",
+  "shuffle_sources": true,
+  "seed": 42,
+  "sources": [
+    {
+      "name": "skypile_chinese_packed",
+      "stages": ["pretrain"],
+      "format": "json",
+      "files": "/home/zwb/ai/data/text/skypile-subset/data/*.jsonl",
+      "packing": true,
+      "weight": 45
+    },
+    {
+      "name": "fineweb_edu_english_packed",
+      "stages": ["pretrain"],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/text/fineweb-edu-10BT/sample/10BT/*.parquet",
+      "packing": true,
+      "weight": 35
+    },
+    {
+      "name": "infinity_code_packed",
+      "stages": ["pretrain"],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/sft/infinity-instruct/7M_domains/code/*.parquet",
+      "packing": true,
+      "weight": 10
+    },
+    {
+      "name": "infinity_math_packed",
+      "stages": ["pretrain"],
+      "format": "parquet",
+      "files": "/home/zwb/ai/data/sft/infinity-instruct/7M_domains/math/*.parquet",
+      "packing": true,
+      "weight": 10
+    }
+  ]
+}

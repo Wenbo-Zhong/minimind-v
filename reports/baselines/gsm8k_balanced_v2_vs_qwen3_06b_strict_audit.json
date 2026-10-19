@@ -1,0 +1,2433 @@
+{
+  "scoring": "strict re-score using corrected extract_prediction; repeated identical lines rejected; marked equations use RHS",
+  "models": {
+    "MiniMind v2": {
+      "gsm8k": {
+        "passed": 0,
+        "total": 100,
+        "items": [
+          {
+            "index": 1,
+            "gold": "18",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 2,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 3,
+            "gold": "70000",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 4,
+            "gold": "540",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 5,
+            "gold": "20",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 6,
+            "gold": "64",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 7,
+            "gold": "260",
+            "pred": "100",
+            "passed": false
+          },
+          {
+            "index": 8,
+            "gold": "160",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 9,
+            "gold": "45",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 10,
+            "gold": "460",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 11,
+            "gold": "366",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 12,
+            "gold": "694",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 13,
+            "gold": "13",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 14,
+            "gold": "18",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 15,
+            "gold": "60",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 16,
+            "gold": "125",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 17,
+            "gold": "230",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 18,
+            "gold": "57500",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 19,
+            "gold": "7",
+            "pred": "4",
+            "passed": false
+          },
+          {
+            "index": 20,
+            "gold": "6",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 21,
+            "gold": "15",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 22,
+            "gold": "14",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 23,
+            "gold": "7",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 24,
+            "gold": "8",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 25,
+            "gold": "26",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 26,
+            "gold": "2",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 27,
+            "gold": "243",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 28,
+            "gold": "16",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 29,
+            "gold": "25",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 30,
+            "gold": "104",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 31,
+            "gold": "109",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 32,
+            "gold": "80",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 33,
+            "gold": "35",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 34,
+            "gold": "70",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 35,
+            "gold": "23",
+            "pred": "40",
+            "passed": false
+          },
+          {
+            "index": 36,
+            "gold": "9",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 37,
+            "gold": "75",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 38,
+            "gold": "2",
+            "pred": "8",
+            "passed": false
+          },
+          {
+            "index": 39,
+            "gold": "10",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 40,
+            "gold": "18",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 41,
+            "gold": "8",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 42,
+            "gold": "200",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 43,
+            "gold": "26",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 44,
+            "gold": "48",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 45,
+            "gold": "20",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 46,
+            "gold": "104",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 47,
+            "gold": "163",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 48,
+            "gold": "800",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 49,
+            "gold": "8",
+            "pred": "6",
+            "passed": false
+          },
+          {
+            "index": 50,
+            "gold": "30",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 51,
+            "gold": "294",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 52,
+            "gold": "5",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 53,
+            "gold": "15",
+            "pred": "15000000000000001247874097323866365742669319703553686634496",
+            "passed": false
+          },
+          {
+            "index": 54,
+            "gold": "40",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 55,
+            "gold": "40",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 56,
+            "gold": "14",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 57,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 58,
+            "gold": "83",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 59,
+            "gold": "57",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 60,
+            "gold": "187",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 61,
+            "gold": "17",
+            "pred": "25",
+            "passed": false
+          },
+          {
+            "index": 62,
+            "gold": "1430",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 63,
+            "gold": "25000",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 64,
+            "gold": "1596",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 65,
+            "gold": "300",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 66,
+            "gold": "36",
+            "pred": "10",
+            "passed": false
+          },
+          {
+            "index": 67,
+            "gold": "48",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 68,
+            "gold": "595",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 69,
+            "gold": "36",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 70,
+            "gold": "60",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 71,
+            "gold": "7425",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 72,
+            "gold": "60",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 73,
+            "gold": "221",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 74,
+            "gold": "255",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 75,
+            "gold": "88",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 76,
+            "gold": "60",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 77,
+            "gold": "5",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 78,
+            "gold": "100",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 79,
+            "gold": "6",
+            "pred": "17999999999999999824893026898842903276024313195637311012864",
+            "passed": false
+          },
+          {
+            "index": 80,
+            "gold": "70",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 81,
+            "gold": "10",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 82,
+            "gold": "17",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 83,
+            "gold": "623",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 84,
+            "gold": "600",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 85,
+            "gold": "15",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 86,
+            "gold": "44",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 87,
+            "gold": "22",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 88,
+            "gold": "9360",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 89,
+            "gold": "8000",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 90,
+            "gold": "24",
+            "pred": "16",
+            "passed": false
+          },
+          {
+            "index": 91,
+            "gold": "225",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 92,
+            "gold": "28",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 93,
+            "gold": "4",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 94,
+            "gold": "36",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 95,
+            "gold": "348",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 96,
+            "gold": "40",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 97,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 98,
+            "gold": "12",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 99,
+            "gold": "5",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 100,
+            "gold": "58",
+            "pred": null,
+            "passed": false
+          }
+        ]
+      },
+      "cmath": {
+        "passed": 2,
+        "total": 100,
+        "items": [
+          {
+            "index": 1,
+            "gold": "18",
+            "pred": "6",
+            "passed": false
+          },
+          {
+            "index": 2,
+            "gold": "45",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 3,
+            "gold": "14",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 4,
+            "gold": "49",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 5,
+            "gold": "83",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 6,
+            "gold": "36",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 7,
+            "gold": "50",
+            "pred": "1",
+            "passed": false
+          },
+          {
+            "index": 8,
+            "gold": "70",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 9,
+            "gold": "6",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 10,
+            "gold": "17",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 11,
+            "gold": "19",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 12,
+            "gold": "13",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 13,
+            "gold": "89",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 14,
+            "gold": "22",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 15,
+            "gold": "11",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 16,
+            "gold": "18",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 17,
+            "gold": "78",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 18,
+            "gold": "98",
+            "pred": "48",
+            "passed": false
+          },
+          {
+            "index": 19,
+            "gold": "13",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 20,
+            "gold": "37",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 21,
+            "gold": "3",
+            "pred": "1",
+            "passed": false
+          },
+          {
+            "index": 22,
+            "gold": "13",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 23,
+            "gold": "62",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 24,
+            "gold": "11",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 25,
+            "gold": "32",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 26,
+            "gold": "32",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 27,
+            "gold": "70",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 28,
+            "gold": "10",
+            "pred": "100000000",
+            "passed": false
+          },
+          {
+            "index": 29,
+            "gold": "4",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 30,
+            "gold": "11",
+            "pred": "5",
+            "passed": false
+          },
+          {
+            "index": 31,
+            "gold": "31",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 32,
+            "gold": "11",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 33,
+            "gold": "44",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 34,
+            "gold": "6",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 35,
+            "gold": "19",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 36,
+            "gold": "87",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 37,
+            "gold": "23",
+            "pred": "9999999999999999932209486743616279764617084419440640",
+            "passed": false
+          },
+          {
+            "index": 38,
+            "gold": "6",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 39,
+            "gold": "25",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 40,
+            "gold": "11",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 41,
+            "gold": "10",
+            "pred": "18",
+            "passed": false
+          },
+          {
+            "index": 42,
+            "gold": "7",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 43,
+            "gold": "34",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 44,
+            "gold": "6",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 45,
+            "gold": "4",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 46,
+            "gold": "25",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 47,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 48,
+            "gold": "13",
+            "pred": "15",
+            "passed": false
+          },
+          {
+            "index": 49,
+            "gold": "25",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 50,
+            "gold": "5",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 51,
+            "gold": "17",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 52,
+            "gold": "4",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 53,
+            "gold": "70",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 54,
+            "gold": "17",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 55,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 56,
+            "gold": "14",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 57,
+            "gold": "11",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 58,
+            "gold": "20",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 59,
+            "gold": "8",
+            "pred": "1",
+            "passed": false
+          },
+          {
+            "index": 60,
+            "gold": "14",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 61,
+            "gold": "27",
+            "pred": "17",
+            "passed": false
+          },
+          {
+            "index": 62,
+            "gold": "10",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 63,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 64,
+            "gold": "39",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 65,
+            "gold": "10",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 66,
+            "gold": "15",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 67,
+            "gold": "50",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 68,
+            "gold": "14",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 69,
+            "gold": "12",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 70,
+            "gold": "12",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 71,
+            "gold": "11",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 72,
+            "gold": "60",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 73,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 74,
+            "gold": "37",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 75,
+            "gold": "11",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 76,
+            "gold": "12",
+            "pred": "12",
+            "passed": true
+          },
+          {
+            "index": 77,
+            "gold": "12",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 78,
+            "gold": "53",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 79,
+            "gold": "2",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 80,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 81,
+            "gold": "29",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 82,
+            "gold": "70",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 83,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 84,
+            "gold": "14",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 85,
+            "gold": "10",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 86,
+            "gold": "90",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 87,
+            "gold": "38",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 88,
+            "gold": "10",
+            "pred": "10",
+            "passed": true
+          },
+          {
+            "index": 89,
+            "gold": "2",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 90,
+            "gold": "17",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 91,
+            "gold": "17",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 92,
+            "gold": "11",
+            "pred": "18",
+            "passed": false
+          },
+          {
+            "index": 93,
+            "gold": "45",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 94,
+            "gold": "24",
+            "pred": "1",
+            "passed": false
+          },
+          {
+            "index": 95,
+            "gold": "26",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 96,
+            "gold": "10",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 97,
+            "gold": "19",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 98,
+            "gold": "30",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 99,
+            "gold": "6",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 100,
+            "gold": "50",
+            "pred": null,
+            "passed": false
+          }
+        ]
+      }
+    },
+    "Qwen3 0.6B": {
+      "gsm8k": {
+        "passed": 1,
+        "total": 100,
+        "items": [
+          {
+            "index": 1,
+            "gold": "18",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 2,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 3,
+            "gold": "70000",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 4,
+            "gold": "540",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 5,
+            "gold": "20",
+            "pred": "800",
+            "passed": false
+          },
+          {
+            "index": 6,
+            "gold": "64",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 7,
+            "gold": "260",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 8,
+            "gold": "160",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 9,
+            "gold": "45",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 10,
+            "gold": "460",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 11,
+            "gold": "366",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 12,
+            "gold": "694",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 13,
+            "gold": "13",
+            "pred": "180",
+            "passed": false
+          },
+          {
+            "index": 14,
+            "gold": "18",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 15,
+            "gold": "60",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 16,
+            "gold": "125",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 17,
+            "gold": "230",
+            "pred": "80",
+            "passed": false
+          },
+          {
+            "index": 18,
+            "gold": "57500",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 19,
+            "gold": "7",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 20,
+            "gold": "6",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 21,
+            "gold": "15",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 22,
+            "gold": "14",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 23,
+            "gold": "7",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 24,
+            "gold": "8",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 25,
+            "gold": "26",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 26,
+            "gold": "2",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 27,
+            "gold": "243",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 28,
+            "gold": "16",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 29,
+            "gold": "25",
+            "pred": "25",
+            "passed": true
+          },
+          {
+            "index": 30,
+            "gold": "104",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 31,
+            "gold": "109",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 32,
+            "gold": "80",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 33,
+            "gold": "35",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 34,
+            "gold": "70",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 35,
+            "gold": "23",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 36,
+            "gold": "9",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 37,
+            "gold": "75",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 38,
+            "gold": "2",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 39,
+            "gold": "10",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 40,
+            "gold": "18",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 41,
+            "gold": "8",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 42,
+            "gold": "200",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 43,
+            "gold": "26",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 44,
+            "gold": "48",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 45,
+            "gold": "20",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 46,
+            "gold": "104",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 47,
+            "gold": "163",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 48,
+            "gold": "800",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 49,
+            "gold": "8",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 50,
+            "gold": "30",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 51,
+            "gold": "294",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 52,
+            "gold": "5",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 53,
+            "gold": "15",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 54,
+            "gold": "40",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 55,
+            "gold": "40",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 56,
+            "gold": "14",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 57,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 58,
+            "gold": "83",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 59,
+            "gold": "57",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 60,
+            "gold": "187",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 61,
+            "gold": "17",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 62,
+            "gold": "1430",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 63,
+            "gold": "25000",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 64,
+            "gold": "1596",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 65,
+            "gold": "300",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 66,
+            "gold": "36",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 67,
+            "gold": "48",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 68,
+            "gold": "595",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 69,
+            "gold": "36",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 70,
+            "gold": "60",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 71,
+            "gold": "7425",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 72,
+            "gold": "60",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 73,
+            "gold": "221",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 74,
+            "gold": "255",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 75,
+            "gold": "88",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 76,
+            "gold": "60",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 77,
+            "gold": "5",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 78,
+            "gold": "100",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 79,
+            "gold": "6",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 80,
+            "gold": "70",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 81,
+            "gold": "10",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 82,
+            "gold": "17",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 83,
+            "gold": "623",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 84,
+            "gold": "600",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 85,
+            "gold": "15",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 86,
+            "gold": "44",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 87,
+            "gold": "22",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 88,
+            "gold": "9360",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 89,
+            "gold": "8000",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 90,
+            "gold": "24",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 91,
+            "gold": "225",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 92,
+            "gold": "28",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 93,
+            "gold": "4",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 94,
+            "gold": "36",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 95,
+            "gold": "348",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 96,
+            "gold": "40",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 97,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 98,
+            "gold": "12",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 99,
+            "gold": "5",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 100,
+            "gold": "58",
+            "pred": null,
+            "passed": false
+          }
+        ]
+      },
+      "cmath": {
+        "passed": 59,
+        "total": 100,
+        "items": [
+          {
+            "index": 1,
+            "gold": "18",
+            "pred": "18",
+            "passed": true
+          },
+          {
+            "index": 2,
+            "gold": "45",
+            "pred": "37",
+            "passed": false
+          },
+          {
+            "index": 3,
+            "gold": "14",
+            "pred": "16",
+            "passed": false
+          },
+          {
+            "index": 4,
+            "gold": "49",
+            "pred": "51",
+            "passed": false
+          },
+          {
+            "index": 5,
+            "gold": "83",
+            "pred": "83",
+            "passed": true
+          },
+          {
+            "index": 6,
+            "gold": "36",
+            "pred": "36",
+            "passed": true
+          },
+          {
+            "index": 7,
+            "gold": "50",
+            "pred": "50",
+            "passed": true
+          },
+          {
+            "index": 8,
+            "gold": "70",
+            "pred": "70",
+            "passed": true
+          },
+          {
+            "index": 9,
+            "gold": "6",
+            "pred": "6",
+            "passed": true
+          },
+          {
+            "index": 10,
+            "gold": "17",
+            "pred": "17",
+            "passed": true
+          },
+          {
+            "index": 11,
+            "gold": "19",
+            "pred": "19",
+            "passed": true
+          },
+          {
+            "index": 12,
+            "gold": "13",
+            "pred": "13",
+            "passed": true
+          },
+          {
+            "index": 13,
+            "gold": "89",
+            "pred": "89",
+            "passed": true
+          },
+          {
+            "index": 14,
+            "gold": "22",
+            "pred": "22",
+            "passed": true
+          },
+          {
+            "index": 15,
+            "gold": "11",
+            "pred": "11",
+            "passed": true
+          },
+          {
+            "index": 16,
+            "gold": "18",
+            "pred": "18",
+            "passed": true
+          },
+          {
+            "index": 17,
+            "gold": "78",
+            "pred": "78",
+            "passed": true
+          },
+          {
+            "index": 18,
+            "gold": "98",
+            "pred": "98",
+            "passed": true
+          },
+          {
+            "index": 19,
+            "gold": "13",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 20,
+            "gold": "37",
+            "pred": "47",
+            "passed": false
+          },
+          {
+            "index": 21,
+            "gold": "3",
+            "pred": "3",
+            "passed": true
+          },
+          {
+            "index": 22,
+            "gold": "13",
+            "pred": "13",
+            "passed": true
+          },
+          {
+            "index": 23,
+            "gold": "62",
+            "pred": "62",
+            "passed": true
+          },
+          {
+            "index": 24,
+            "gold": "11",
+            "pred": "9",
+            "passed": false
+          },
+          {
+            "index": 25,
+            "gold": "32",
+            "pred": "32",
+            "passed": true
+          },
+          {
+            "index": 26,
+            "gold": "32",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 27,
+            "gold": "70",
+            "pred": "70",
+            "passed": true
+          },
+          {
+            "index": 28,
+            "gold": "10",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 29,
+            "gold": "4",
+            "pred": "4",
+            "passed": true
+          },
+          {
+            "index": 30,
+            "gold": "11",
+            "pred": "11",
+            "passed": true
+          },
+          {
+            "index": 31,
+            "gold": "31",
+            "pred": "31",
+            "passed": true
+          },
+          {
+            "index": 32,
+            "gold": "11",
+            "pred": "11",
+            "passed": true
+          },
+          {
+            "index": 33,
+            "gold": "44",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 34,
+            "gold": "6",
+            "pred": "6",
+            "passed": true
+          },
+          {
+            "index": 35,
+            "gold": "19",
+            "pred": "35",
+            "passed": false
+          },
+          {
+            "index": 36,
+            "gold": "87",
+            "pred": "87",
+            "passed": true
+          },
+          {
+            "index": 37,
+            "gold": "23",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 38,
+            "gold": "6",
+            "pred": "26",
+            "passed": false
+          },
+          {
+            "index": 39,
+            "gold": "25",
+            "pred": "25",
+            "passed": true
+          },
+          {
+            "index": 40,
+            "gold": "11",
+            "pred": "11",
+            "passed": true
+          },
+          {
+            "index": 41,
+            "gold": "10",
+            "pred": "10",
+            "passed": true
+          },
+          {
+            "index": 42,
+            "gold": "7",
+            "pred": "6",
+            "passed": false
+          },
+          {
+            "index": 43,
+            "gold": "34",
+            "pred": "37",
+            "passed": false
+          },
+          {
+            "index": 44,
+            "gold": "6",
+            "pred": "6",
+            "passed": true
+          },
+          {
+            "index": 45,
+            "gold": "4",
+            "pred": "6",
+            "passed": false
+          },
+          {
+            "index": 46,
+            "gold": "25",
+            "pred": "25",
+            "passed": true
+          },
+          {
+            "index": 47,
+            "gold": "3",
+            "pred": "3",
+            "passed": true
+          },
+          {
+            "index": 48,
+            "gold": "13",
+            "pred": "23",
+            "passed": false
+          },
+          {
+            "index": 49,
+            "gold": "25",
+            "pred": "25",
+            "passed": true
+          },
+          {
+            "index": 50,
+            "gold": "5",
+            "pred": "5",
+            "passed": true
+          },
+          {
+            "index": 51,
+            "gold": "17",
+            "pred": "17",
+            "passed": true
+          },
+          {
+            "index": 52,
+            "gold": "4",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 53,
+            "gold": "70",
+            "pred": "70",
+            "passed": true
+          },
+          {
+            "index": 54,
+            "gold": "17",
+            "pred": "17",
+            "passed": true
+          },
+          {
+            "index": 55,
+            "gold": "3",
+            "pred": "3",
+            "passed": true
+          },
+          {
+            "index": 56,
+            "gold": "14",
+            "pred": "13",
+            "passed": false
+          },
+          {
+            "index": 57,
+            "gold": "11",
+            "pred": "11",
+            "passed": true
+          },
+          {
+            "index": 58,
+            "gold": "20",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 59,
+            "gold": "8",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 60,
+            "gold": "14",
+            "pred": "16",
+            "passed": false
+          },
+          {
+            "index": 61,
+            "gold": "27",
+            "pred": "24",
+            "passed": false
+          },
+          {
+            "index": 62,
+            "gold": "10",
+            "pred": "10",
+            "passed": true
+          },
+          {
+            "index": 63,
+            "gold": "3",
+            "pred": "31",
+            "passed": false
+          },
+          {
+            "index": 64,
+            "gold": "39",
+            "pred": "45",
+            "passed": false
+          },
+          {
+            "index": 65,
+            "gold": "10",
+            "pred": "10",
+            "passed": true
+          },
+          {
+            "index": 66,
+            "gold": "15",
+            "pred": "10",
+            "passed": false
+          },
+          {
+            "index": 67,
+            "gold": "50",
+            "pred": "50",
+            "passed": true
+          },
+          {
+            "index": 68,
+            "gold": "14",
+            "pred": "14",
+            "passed": true
+          },
+          {
+            "index": 69,
+            "gold": "12",
+            "pred": "7",
+            "passed": false
+          },
+          {
+            "index": 70,
+            "gold": "12",
+            "pred": "-12",
+            "passed": false
+          },
+          {
+            "index": 71,
+            "gold": "11",
+            "pred": "11",
+            "passed": true
+          },
+          {
+            "index": 72,
+            "gold": "60",
+            "pred": "60",
+            "passed": true
+          },
+          {
+            "index": 73,
+            "gold": "3",
+            "pred": "3",
+            "passed": true
+          },
+          {
+            "index": 74,
+            "gold": "37",
+            "pred": "37",
+            "passed": true
+          },
+          {
+            "index": 75,
+            "gold": "11",
+            "pred": "11",
+            "passed": true
+          },
+          {
+            "index": 76,
+            "gold": "12",
+            "pred": "20",
+            "passed": false
+          },
+          {
+            "index": 77,
+            "gold": "12",
+            "pred": "12",
+            "passed": true
+          },
+          {
+            "index": 78,
+            "gold": "53",
+            "pred": "68",
+            "passed": false
+          },
+          {
+            "index": 79,
+            "gold": "2",
+            "pred": "15",
+            "passed": false
+          },
+          {
+            "index": 80,
+            "gold": "3",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 81,
+            "gold": "29",
+            "pred": "39",
+            "passed": false
+          },
+          {
+            "index": 82,
+            "gold": "70",
+            "pred": "70",
+            "passed": true
+          },
+          {
+            "index": 83,
+            "gold": "3",
+            "pred": "2",
+            "passed": false
+          },
+          {
+            "index": 84,
+            "gold": "14",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 85,
+            "gold": "10",
+            "pred": "5",
+            "passed": false
+          },
+          {
+            "index": 86,
+            "gold": "90",
+            "pred": null,
+            "passed": false
+          },
+          {
+            "index": 87,
+            "gold": "38",
+            "pred": "58",
+            "passed": false
+          },
+          {
+            "index": 88,
+            "gold": "10",
+            "pred": "20",
+            "passed": false
+          },
+          {
+            "index": 89,
+            "gold": "2",
+            "pred": "12",
+            "passed": false
+          },
+          {
+            "index": 90,
+            "gold": "17",
+            "pred": "17",
+            "passed": true
+          },
+          {
+            "index": 91,
+            "gold": "17",
+            "pred": "17",
+            "passed": true
+          },
+          {
+            "index": 92,
+            "gold": "11",
+            "pred": "11",
+            "passed": true
+          },
+          {
+            "index": 93,
+            "gold": "45",
+            "pred": "39",
+            "passed": false
+          },
+          {
+            "index": 94,
+            "gold": "24",
+            "pred": "24",
+            "passed": true
+          },
+          {
+            "index": 95,
+            "gold": "26",
+            "pred": "26",
+            "passed": true
+          },
+          {
+            "index": 96,
+            "gold": "10",
+            "pred": "10",
+            "passed": true
+          },
+          {
+            "index": 97,
+            "gold": "19",
+            "pred": "12",
+            "passed": false
+          },
+          {
+            "index": 98,
+            "gold": "30",
+            "pred": "30",
+            "passed": true
+          },
+          {
+            "index": 99,
+            "gold": "6",
+            "pred": "6",
+            "passed": true
+          },
+          {
+            "index": 100,
+            "gold": "50",
+            "pred": "50",
+            "passed": true
+          }
+        ]
+      }
+    }
+  }
+}
