@@ -25,7 +25,6 @@ warnings.filterwarnings('ignore')
 
 def train_epoch(epoch, loader, iters, start_step=0, wandb=None):
     start_time = time.time()
-    last_step = start_step
     loss_sum = 0.0
     aux_loss_sum = 0.0
     log_batches = 0
@@ -35,7 +34,6 @@ def train_epoch(epoch, loader, iters, start_step=0, wandb=None):
         input_ids = input_ids.to(args.device)
         labels = labels.to(args.device)
         pixel_values = {k: v.to(args.device) for k, v in pixel_values.items()} if isinstance(pixel_values, dict) else pixel_values.to(args.device)
-        last_step = step
         lr = get_lr(epoch * iters + step, args.epochs * iters, args.learning_rate)
         for param_group in optimizer.param_groups:
             param_group['lr'] = lr
@@ -52,7 +50,7 @@ def train_epoch(epoch, loader, iters, start_step=0, wandb=None):
 
         scaler.scale(loss).backward()
 
-        if step % args.accumulation_steps == 0:
+        if step % args.accumulation_steps == 0 or step == iters:
             scaler.unscale_(optimizer)
             torch.nn.utils.clip_grad_norm_(model.parameters(), args.grad_clip)
 
@@ -95,13 +93,6 @@ def train_epoch(epoch, loader, iters, start_step=0, wandb=None):
             del state_dict, clean_state_dict
 
         del input_ids, labels, pixel_values, res, loss
-
-    if last_step > start_step and last_step % args.accumulation_steps != 0:
-        scaler.unscale_(optimizer)
-        torch.nn.utils.clip_grad_norm_(model.parameters(), args.grad_clip)
-        scaler.step(optimizer)
-        scaler.update()
-        optimizer.zero_grad(set_to_none=True)
 
 
 if __name__ == "__main__":

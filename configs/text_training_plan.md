@@ -1,6 +1,6 @@
 # 0.85B 纯文本训练方案（2026-10-20）
 
-当前由用户在终端手动运行预训练，输出目录为 `out/text085b_pretrain_manual_v1/`，进度见该目录 `metrics.jsonl`。到达 100M token pilot 终点后停止，再手动执行验证；不会自动继续到 1B 或启动 SFT。旧后台任务已停止，launcher 和历史补丁已归入本地忽略的 `archive/legacy_*/`。
+2026-10-20：已合并上游的注意力精度、MoE top-1 梯度及 VLM 尾步保存顺序修复。此前用户手动运行的 `out/text085b_pretrain_manual_v1/` 训练已按要求停止，记录和检查点保留。接下来使用更新后的代码和新目录 `out/text085b_pretrain_upstream_v1/` **从随机参数重新训练**，不要传 `--resume` 或 `--init_weight`；新实验尚未启动，仍由用户手动执行。
 
 ## 推荐入口与阶段
 
@@ -76,20 +76,20 @@ CPU 测试覆盖 JSONL/Parquet 游标、shuffle buffer、packing、来源比例�
 ```bash
 PYTHON=/home/zwb/miniconda3/envs/minimind-v/bin/python
 # 只打印配置和指纹，不创建或训练完整模型。
-"$PYTHON" trainer/train_text.py --stage pretrain --dry_run --output_dir out/text085b_pretrain_manual_v1
+"$PYTHON" trainer/train_text.py --stage pretrain --dry_run --output_dir out/text085b_pretrain_upstream_v1
 
 # 约 100M pilot：实际是 100,008,480 有效预测 tokens。
-# 首次启动命令；当前手动任务已在运行，不要重复启动。
+# 更新后代码的首次启动命令；从零训练，请勿添加 --resume 或 --init_weight。
 # 约 1.7 小时的理想估算不含 I/O 波动、验证和保存。
 "$PYTHON" trainer/train_text.py --stage pretrain \
   --max_steps 61096 --stop_after 6110 --batch_size 4 --accumulation_steps 4 \
   --max_seq_len 1024 --learning_rate 0.0003 --warmup_steps 100 \
-  --save_interval 1000 --log_interval 20 --output_dir out/text085b_pretrain_manual_v1
+  --save_interval 1000 --log_interval 20 --output_dir out/text085b_pretrain_upstream_v1
 
 # 固定中英文／代码／数学分项验证，逐渐增加 batches_per_source 提高可信度。
-"$PYTHON" eval_text_loss.py --checkpoint out/text085b_pretrain_manual_v1/last.pt \
+"$PYTHON" eval_text_loss.py --checkpoint out/text085b_pretrain_upstream_v1/last.pt \
   --data_config configs/pretrain_text_085b_validation.json --batches_per_source 128 \
-  --output out/text085b_pretrain_manual_v1/validation_loss.json
+  --output out/text085b_pretrain_upstream_v1/validation_loss.json
 ```
 
 预期启动日志：`params=847,304,960, random_init=True, vision=disabled`，随后显示 main process、buffer=256 及 45/35/10/10 目标。日志应持续出现四来源实际计数、有限 loss/梯度和显存数据。
@@ -100,7 +100,7 @@ pilot 后先核对留出 loss、各来源重复轮次和吞吐，再决定是否
 
 ```bash
 "$PYTHON" trainer/train_text.py --stage sft \
-  --init_weight out/text085b_pretrain_manual_v1/last.pt \
+  --init_weight out/text085b_pretrain_upstream_v1/last.pt \
   --max_steps 2000 --batch_size 4 --accumulation_steps 4 --max_seq_len 1024 \
   --learning_rate 0.00002 --output_dir out/text085b_sft_v1
 "$PYTHON" eval_text_loss.py --checkpoint out/text085b_sft_v1/last.pt \
@@ -117,4 +117,4 @@ SFT 每步的有效监督 token 数随回答长度变化，训练量以 counters
 
 旧 SFT 补丁配置、针对固定小测的修补脚本、旧 VLM 文本评测入口和非关键报告已移至 `archive/legacy_*/`，不加入 Git。关键历史结果见 [基线索引](../reports/baselines/README.md)。不要再将旧补丁混入当前训练。
 
-当前 SFT 数据的重建链保留：`gen_arithmetic.py`、`gen_arithmetic_curriculum.py`、`gen_identity.py` → `dataset/build_curated_sft.py` → `dataset/build_balanced_sft.py`；数学与工具来源分别由 `dataset/build_gsm8k_sft.py`、`dataset/build_calculator_sft.py` 生成。训练数据本身仍在原处，当前训练及断点指纹未修改。
+当前 SFT 数据的重建链保留：`gen_arithmetic.py`、`gen_arithmetic_curriculum.py`、`gen_identity.py` → `dataset/build_curated_sft.py` → `dataset/build_balanced_sft.py`；数学与工具来源分别由 `dataset/build_gsm8k_sft.py`、`dataset/build_calculator_sft.py` 生成。训练数据本身仍在原处，本次合并改变了模型代码指纹；旧实验检查点不能在新代码下伪装成无缝续训。旧实验数据和记录仍保留。
