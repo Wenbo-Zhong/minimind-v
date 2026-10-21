@@ -46,24 +46,25 @@ def convert(question, answer, max_calls):
         {'role': 'user', 'content': PROMPT + question.strip()},
     ]
     cursor = 0
+    assistant_turn = ''
     for match in matches:
-        prefix = answer[cursor:match.start()]
-        if prefix:
-            turns.append({'role': 'assistant', 'content': prefix})
+        assistant_turn += answer[cursor:match.start()]
         expression, expected = match.group(1).rsplit('=', 1)
         expression = expression.strip()
         actual = calculate(expression)
         if not close_numbers(actual, calculate(expected.strip())):
             raise ValueError('calculator_annotation_mismatch')
         turns.extend([
-            {'role': 'assistant', 'content': f'<calculator>{expression}</calculator>'},
+            {'role': 'assistant', 'content': assistant_turn + f'<calculator>{expression}</calculator>'},
             {'role': 'user', 'content': 'Calculator result: ' + actual},
         ])
+        assistant_turn = ''
         cursor = match.end()
 
     tail = GOLD_RE.sub('', answer[cursor:]).strip()
     tail = re.sub(r'\s+', ' ', tail)
-    final = (tail + '\n' if tail else '') + 'Final answer: ' + gold
+    final = (assistant_turn + tail).strip()
+    final = (final + '\n' if final else '') + 'Final answer: ' + gold
     turns.append({'role': 'assistant', 'content': final})
     return turns, len(matches), gold
 
@@ -71,7 +72,7 @@ def convert(question, answer, max_calls):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', type=Path, default=Path('/home/zwb/ai/data/eval/gsm8k/main/train-00000-of-00001.parquet'))
-    parser.add_argument('--output_dir', type=Path, default=ROOT / 'dataset/prepared/gsm8k_calculator_v2')
+    parser.add_argument('--output_dir', type=Path, default=ROOT / 'dataset/prepared/gsm8k_calculator_v3')
     parser.add_argument('--tokenizer', type=Path, default=ROOT / 'model')
     parser.add_argument('--max_length', type=int, default=1024)
     parser.add_argument('--max_calls', type=int, default=4)
