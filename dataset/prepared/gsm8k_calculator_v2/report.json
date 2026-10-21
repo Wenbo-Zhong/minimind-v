@@ -1,0 +1,31 @@
+{
+  "input": "/home/zwb/ai/data/eval/gsm8k/main/train-00000-of-00001.parquet",
+  "output_dir": "/home/zwb/workspace/minimind-v/dataset/prepared/gsm8k_calculator_v2",
+  "max_length": 1024,
+  "max_calls": 4,
+  "counts": {
+    "scanned": 7473,
+    "train": 6081,
+    "train_tool_calls": 16702,
+    "train_steps_2": 2157,
+    "train_steps_3": 2120,
+    "train_steps_4": 1408,
+    "train_steps_1": 396,
+    "validation": 59,
+    "validation_tool_calls": 159,
+    "validation_steps_4": 16,
+    "validation_steps_2": 18,
+    "validation_steps_3": 17,
+    "validation_steps_1": 8
+  },
+  "rejections": {
+    "call_count_outside_budget": 1333
+  },
+  "effective_assistant_tokens": {
+    "train": 721584,
+    "validation": 7353
+  },
+  "split": "SHA256(question_key(prompt + question)) modulo 100; train 99%, validation 1% (same key as non-tool GSM8K source)",
+  "source_license": "MIT (OpenAI GSM8K)",
+  "validation_exclusion": "GSM8K test is a separate official source split and was not read."
+}
