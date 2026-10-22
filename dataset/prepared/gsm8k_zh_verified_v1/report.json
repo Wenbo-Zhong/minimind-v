@@ -1,0 +1,33 @@
+{
+  "input": "/home/zwb/ai/data/sft/open_math/GSM8K_zh/GSM8K_zh.json",
+  "official_train": "/home/zwb/ai/data/eval/gsm8k/main/train-00000-of-00001.parquet",
+  "output_dir": "/home/zwb/workspace/minimind-v/dataset/prepared/gsm8k_zh_verified_v1",
+  "source_license": "MIT (meta-math/GSM8K_zh dataset card)",
+  "source_note": "Chinese translations of GSM8K training problems; not novel problem coverage.",
+  "checks": [
+    "train split only; official GSM8K train question and answer_only cross-checked",
+    "last explicit Chinese final answer must equal official GSM8K gold (including 万/亿)",
+    "GSM8K test and CMATH dev/test question overlap excluded",
+    "normalized duplicates excluded; deterministic 90/10 split by original question hash"
+  ],
+  "max_length": 1024,
+  "counts": {
+    "scanned": 8792,
+    "train": 6686,
+    "train_assistant_tokens": 639206,
+    "validation": 699,
+    "validation_assistant_tokens": 67056
+  },
+  "rejections": {
+    "missing_explicit_chinese_final_answer": 79,
+    "chinese_final_mismatches_official_gsm8k_gold": 6,
+    "missing_question_or_answer": 2,
+    "clock_or_colon_final_answer": 1,
+    "not_training_split": 1319
+  },
+  "exclude_questions": [
+    "/home/zwb/ai/data/eval/gsm8k/main/test-00000-of-00001.parquet",
+    "/home/zwb/ai/data/eval/cmath/cmath_dev.jsonl",
+    "/home/zwb/ai/data/eval/cmath/cmath_test.jsonl"
+  ]
+}
