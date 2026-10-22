@@ -1,0 +1,40 @@
+{
+  "input": "/home/zwb/ai/data/sft/open_math/math-reasoning-zh/data/math_reasoning_zh.jsonl",
+  "output_dir": "/home/zwb/workspace/minimind-v/dataset/prepared/chinese_math_verified_v1",
+  "source_license": "MIT (shangshang/math-reasoning-zh, local README metadata)",
+  "checks": [
+    "every extracted arithmetic equality is re-evaluated with bounded Decimal arithmetic",
+    "final numeric answer must match the final checked equation",
+    "normalized duplicate and listed evaluation questions are excluded",
+    "deterministic 90/10 train/validation split by normalized question hash"
+  ],
+  "max_length": 1024,
+  "counts": {
+    "scanned": 500,
+    "train": 359,
+    "train_discount": 88,
+    "train_shopping": 87,
+    "train_distance": 90,
+    "train_meeting": 91,
+    "validation": 37,
+    "validation_discount": 4,
+    "validation_distance": 10,
+    "validation_meeting": 9,
+    "validation_shopping": 13,
+    "validation_factory": 1,
+    "train_factory": 3
+  },
+  "rejections": {
+    "arithmetic_mismatch": 96,
+    "duplicate_question": 8
+  },
+  "effective_assistant_tokens": {
+    "train": 18569,
+    "validation": 1983
+  },
+  "exclude_questions": [
+    "/home/zwb/ai/data/eval/gsm8k/main/test-00000-of-00001.parquet",
+    "/home/zwb/ai/data/eval/cmath/cmath_dev.jsonl",
+    "/home/zwb/ai/data/eval/cmath/cmath_test.jsonl"
+  ]
+}
