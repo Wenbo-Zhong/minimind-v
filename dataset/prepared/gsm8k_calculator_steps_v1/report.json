@@ -1,0 +1,26 @@
+{
+  "input_dir": "dataset/prepared/gsm8k_calculator_v3",
+  "output_dir": "dataset/prepared/gsm8k_calculator_steps_v1",
+  "partition": "short_1_2: 1-2 verified calculator calls; long_3_4: 3-4 calls",
+  "counts": {
+    "train_short_1_2": 2553,
+    "train_long_3_4": 3528,
+    "validation_long_3_4": 33,
+    "validation_short_1_2": 26
+  },
+  "step_distribution": {
+    "train_short_1_2_calls": 4710,
+    "train_short_1_2_n2": 2157,
+    "train_long_3_4_calls": 11992,
+    "train_long_3_4_n3": 2120,
+    "train_long_3_4_n4": 1408,
+    "train_short_1_2_n1": 396,
+    "validation_long_3_4_calls": 115,
+    "validation_long_3_4_n4": 16,
+    "validation_short_1_2_calls": 44,
+    "validation_short_1_2_n2": 18,
+    "validation_long_3_4_n3": 17,
+    "validation_short_1_2_n1": 8
+  },
+  "leakage_note": "Preserves the source train/validation partition; source excludes official GSM8K test."
+}

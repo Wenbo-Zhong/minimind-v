@@ -1,0 +1,73 @@
+{
+  "mixing_unit": "loss_tokens",
+  "seed": 42,
+  "shuffle_buffer": 256,
+  "exclude_questions": [
+    "/home/zwb/ai/data/eval/gsm8k/main/test-00000-of-00001.parquet",
+    "/home/zwb/ai/data/eval/cmath/cmath_dev.jsonl",
+    "/home/zwb/ai/data/eval/cmath/cmath_test.jsonl"
+  ],
+  "sources": [
+    {
+      "name": "calculator_ape",
+      "weight": 20,
+      "files": "/home/zwb/workspace/minimind-v/dataset/prepared/calculator_v1/validation.jsonl",
+      "stages": [
+        "sft"
+      ]
+    },
+    {
+      "name": "chinese_general",
+      "weight": 25,
+      "files": "/home/zwb/workspace/minimind-v/dataset/curated_sft/balanced/chinese.jsonl",
+      "stages": [
+        "sft"
+      ],
+      "split": "validation"
+    },
+    {
+      "name": "english_general",
+      "weight": 20,
+      "files": "/home/zwb/workspace/minimind-v/dataset/curated_sft/balanced/tulu_short.jsonl",
+      "stages": [
+        "sft"
+      ],
+      "split": "validation"
+    },
+    {
+      "name": "code_general",
+      "weight": 10,
+      "files": "/home/zwb/workspace/minimind-v/dataset/curated_sft/balanced/code.jsonl",
+      "stages": [
+        "sft"
+      ],
+      "split": "validation"
+    },
+    {
+      "name": "gsm8k_calculator",
+      "weight": 15,
+      "files": "/home/zwb/workspace/minimind-v/dataset/prepared/gsm8k_calculator_v5/validation.jsonl",
+      "stages": [
+        "sft"
+      ]
+    },
+    {
+      "name": "math_without_tools",
+      "weight": 5,
+      "files": "/home/zwb/workspace/minimind-v/dataset/curated_sft/balanced/gsm8k_train_verified.jsonl",
+      "stages": [
+        "sft"
+      ],
+      "split": "validation"
+    },
+    {
+      "name": "arithmetic_basic",
+      "weight": 5,
+      "files": "/home/zwb/workspace/minimind-v/dataset/curated_sft/balanced/arithmetic.jsonl",
+      "stages": [
+        "sft"
+      ],
+      "split": "validation"
+    }
+  ]
+}
