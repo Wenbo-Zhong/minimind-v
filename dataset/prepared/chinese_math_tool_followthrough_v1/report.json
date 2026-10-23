@@ -1,0 +1,37 @@
+{
+  "source_dir": "/home/zwb/workspace/minimind-v/dataset/prepared/chinese_math_verified_v1",
+  "source_report": "/home/zwb/workspace/minimind-v/dataset/prepared/chinese_math_verified_v1/report.json",
+  "output_dir": "/home/zwb/workspace/minimind-v/dataset/prepared/chinese_math_tool_followthrough_v1",
+  "source_license": "MIT (shangshang/math-reasoning-zh; verified source report)",
+  "construction": [
+    "reuses only the already verified train and validation splits",
+    "re-evaluates every extracted source equation and generated calculator expression",
+    "requires the final calculator result to match the verified final answer",
+    "each assistant tool call is followed by its actual calculator result; the final answer is a separate assistant turn",
+    "checks the final assistant <|im_end|> is supervised by encode_sft",
+    "inherits the source exclusion of GSM8K test and CMATH dev/test questions"
+  ],
+  "max_length": 1024,
+  "counts": {
+    "train": 359,
+    "train_tool_calls": 898,
+    "validation": 37,
+    "validation_tool_calls": 98
+  },
+  "categories": {
+    "train_discount": 88,
+    "train_shopping": 87,
+    "train_distance": 90,
+    "train_meeting": 91,
+    "train_factory": 3,
+    "validation_discount": 4,
+    "validation_distance": 10,
+    "validation_meeting": 9,
+    "validation_shopping": 13,
+    "validation_factory": 1
+  },
+  "effective_assistant_tokens": {
+    "train": 15602,
+    "validation": 1668
+  }
+}
